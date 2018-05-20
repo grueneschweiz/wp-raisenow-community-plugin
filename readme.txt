@@ -7,7 +7,8 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Add configurable RaiseNow donation forms using shortcode. IMPORTANT: You need to have a contract with RaiseNow.
+Add configurable RaiseNow donation forms using shortcode.
+IMPORTANT: You need to have a contract with RaiseNow.
 
 == Description ==
 
