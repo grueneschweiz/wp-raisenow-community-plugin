@@ -1,0 +1,26 @@
+#raisenow-community-short-code-message {
+    display: none;
+}
+
+.raisenow-community-wrapper .notice-info,
+.raisenow-community-wrapper .notice-warning {
+    background: #fcfcfc;
+    border-left: 4px solid;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    margin: 5px 15px 2px;
+    padding: 10px 12px;
+    width: calc(100% - 99px);
+}
+
+.raisenow-community-wrapper .notice-warning {
+    border-left-color: #dc3232;
+}
+
+.raisenow-community-wrapper .notice-info {
+    border-left-color: #00a0d2;
+}
+
+#raisenow-community-short-code-button input[name='raisenow-community-button-link'] {
+    width: calc(100% - 41px);
+}
