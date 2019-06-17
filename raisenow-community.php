@@ -127,8 +127,8 @@ class Raisenow_Community_Main {
 	public
 	function add_menu() {
 		add_options_page(
-			__( 'Online donations', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
-			__( 'Online donations', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
+			__( 'Online donations', RAISENOW_COMMUNITY_PREFIX ),
+			__( 'Online donations', RAISENOW_COMMUNITY_PREFIX ),
 			'manage_options',
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
 			[ &$this, 'display_plugin_optionspage' ]
@@ -141,7 +141,7 @@ class Raisenow_Community_Main {
 	public
 	function display_plugin_optionspage() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( __( 'You do not have sufficient permissions to access this page.', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ) );
+			wp_die( __( 'You do not have sufficient permissions to access this page.', RAISENOW_COMMUNITY_PREFIX ) );
 		}
 		
 		// Render the settings template

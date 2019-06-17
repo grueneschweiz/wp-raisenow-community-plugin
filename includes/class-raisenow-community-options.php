@@ -22,34 +22,33 @@ class Raisenow_Community_Options {
 
 		add_settings_section(
 			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
-			__( 'Customize donation form', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
+			__( 'Customize donation form', RAISENOW_COMMUNITY_PREFIX ),
 			[ &$this, 'donation_options_section_header' ],
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings'
 		);
 
 		add_settings_field(
 			RAISENOW_COMMUNITY_PREFIX . '_api_key',
-			__( 'API key', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
+			__( 'API key', RAISENOW_COMMUNITY_PREFIX ),
 			[ &$this, 'render_api_key_option' ],
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
 			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
 			[
 				'option_id' => 'api_key',
-				'helptext'  => "<p>" . __( 'Enter your RaiseNow API key.',
-						RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ) . "</p>",
+				'helptext'  => "<p>" . __( 'Enter your RaiseNow API key.', RAISENOW_COMMUNITY_PREFIX ) . "</p>",
 			]
 		);
 
 		add_settings_field(
 			RAISENOW_COMMUNITY_PREFIX . '_javascript',
-			__( 'Custom script', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
+			__( 'Custom script', RAISENOW_COMMUNITY_PREFIX ),
 			[ &$this, 'render_custom_code_option' ],
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
 			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
 			[
 				'option_id' => 'javascript',
 				'helptext'  => "<p>" . __( 'Enter your javascript below. It will be applied to all donation forms.',
-						RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ) . "</p>",
+						RAISENOW_COMMUNITY_PREFIX ) . "</p>",
 			]
 		);
 		
@@ -57,14 +56,14 @@ class Raisenow_Community_Options {
 		
 		add_settings_field(
 			RAISENOW_COMMUNITY_PREFIX . '_css',
-			__( 'Custom css', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
+			__( 'Custom css', RAISENOW_COMMUNITY_PREFIX ),
 			[ &$this, 'render_custom_code_option' ],
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
 			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
 			[
 				'option_id' => 'css',
 				'helptext'  => "<p>" . __( 'Enter your custom css below. It will be applied to all donation forms.',
-						RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ) . "</p>",
+						RAISENOW_COMMUNITY_PREFIX ) . "</p>",
 			]
 		);
 		
@@ -72,7 +71,7 @@ class Raisenow_Community_Options {
 	}
 	
 	public function donation_options_section_header() {
-		echo __( 'Use the options below to customize your donation form.', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' );
+		echo __( 'Use the options below to customize your donation form.', RAISENOW_COMMUNITY_PREFIX );
 	}
 
 	public function render_api_key_option( $args ) {

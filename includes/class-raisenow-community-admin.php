@@ -21,9 +21,9 @@ class Raisenow_Community_Admin {
 		
 		// add media button
 		echo '<a href="#TB_inline?&inlineId='.RAISENOW_COMMUNITY_PREFIX.'-short-code-generator" class="thickbox button" ' .
-		     'title="' . esc_attr__( 'Insert Donation Form', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ) . '">' .
+		     'title="' . esc_attr__( 'Insert Donation Form', RAISENOW_COMMUNITY_PREFIX ) . '">' .
 		     '<span class="wp-media-buttons-icon dashicons dashicons-plus"></span> ' .
-		     __( 'Insert Donation Form', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ) . '</a>';
+		     __( 'Insert Donation Form', RAISENOW_COMMUNITY_PREFIX ) . '</a>';
 	}
 	
 	/**

@@ -1,5 +1,5 @@
 <div class="wrap">
-    <h2><?php _e( 'Online donation options', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community'); ?></h2>
+    <h2><?php _e( 'Online donation options', RAISENOW_COMMUNITY_PREFIX ); ?></h2>
 
     <form action="options.php" method="post">
 		
