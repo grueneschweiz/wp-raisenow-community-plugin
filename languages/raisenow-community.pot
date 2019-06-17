@@ -1,11 +1,12 @@
 # Copyright (C) 2018 Cyrill Bolliger | Grüne Schweiz | Les verts suisses
 # This file is distributed under the same license as the RaiseNow donation forms package.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: RaiseNow donation forms 1.0.0\n"
-"Report-Msgid-Bugs-To: "
-"https://wordpress.org/support/plugin/raisenow-community\n"
-"POT-Creation-Date: 2018-05-20 15:02:48+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
+"community\n"
+"POT-Creation-Date: 2019-06-17 12:20+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,55 +15,42 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Country: United States\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
-"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-Bookmarks: \n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: grunt-wp-i18n1.0.2\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: admin/options.php:2
 msgid "Online donation options"
 msgstr ""
 
 #: admin/short-code-generator.php:9
+#, php-format
 msgid "You need to have a contract with %s to use this function."
 msgstr ""
 
 #: admin/short-code-generator.php:16
-msgid "Enter the API key you received from RaiseNow"
-msgstr ""
-
-#: admin/short-code-generator.php:19
-msgid "Enter the API key here."
-msgstr ""
-
-#: admin/short-code-generator.php:24
 msgid "Choose language for the donation form"
 msgstr ""
 
-#: admin/short-code-generator.php:28
+#: admin/short-code-generator.php:20
 msgid "German"
 msgstr ""
 
-#: admin/short-code-generator.php:30
+#: admin/short-code-generator.php:22
 msgid "French"
 msgstr ""
 
-#: admin/short-code-generator.php:31
+#: admin/short-code-generator.php:23
 msgid "English"
 msgstr ""
 
-#: admin/short-code-generator.php:36
+#: admin/short-code-generator.php:28
 msgid "Insert shortcode"
-msgstr ""
-
-#: admin/short-code-generator.php:43
-msgid "Please enter the API key provided by RaiseNow."
 msgstr ""
 
 #: includes/class-raisenow-community-admin.php:24
@@ -70,28 +58,102 @@ msgstr ""
 msgid "Insert Donation Form"
 msgstr ""
 
+#: includes/class-raisenow-community-frontend.php:56
+#, php-format
+msgctxt "HTML link tag to the settings page"
+msgid ""
+"Donation form: Missing api key. Add the API key you received from RaiseNow "
+"on in your %splugin settings.%s"
+msgstr ""
+
+#: includes/class-raisenow-community-frontend.php:61
+msgid "Donation form: Missing api key. Please contact site administrator."
+msgstr ""
+
+#: includes/class-raisenow-community-frontend.php:69
+#, php-format
+msgid ""
+"Donation form: Unknown language key in shortcode. Accepted values are %1$s. "
+"Shortcode must have the form: %2$s"
+msgstr ""
+
+#: includes/class-raisenow-community-frontend.php:74
+msgid ""
+"Donation form: Invalid language setting. Please contact site administrator."
+msgstr ""
+
 #: includes/class-raisenow-community-options.php:25
 msgid "Customize donation form"
 msgstr ""
 
 #: includes/class-raisenow-community-options.php:32
-msgid "Add custom script"
+msgid "API key"
 msgstr ""
 
 #: includes/class-raisenow-community-options.php:38
+msgid "Enter your RaiseNow API key."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:44
+msgid "Custom script"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:50
 msgid "Enter your javascript below. It will be applied to all donation forms."
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:47
-msgid "Add custom css"
+#: includes/class-raisenow-community-options.php:59
+msgid "Custom css"
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:53
+#: includes/class-raisenow-community-options.php:65
 msgid "Enter your custom css below. It will be applied to all donation forms."
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:62
+#: includes/class-raisenow-community-options.php:74
 msgid "Use the options below to customize your donation form."
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
+msgid "Exclude"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/include/file.php:2
+msgid "Include"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/add-domain.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:4
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:3
+msgid "String"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:6
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:7
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:8
+msgctxt "a string"
+msgid "String"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:9
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:10
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:11
+#, php-format
+msgid "1 Star"
+msgid_plural "%s Stars"
+msgstr[0] ""
+msgstr[1] ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:7
+msgid "A"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:15
+msgid "B"
 msgstr ""
 
 #: raisenow-community.php:130 raisenow-community.php:131
@@ -100,41 +162,4 @@ msgstr ""
 
 #: raisenow-community.php:144
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "RaiseNow donation forms"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"This community plugin lets you add RaiseNow donation forms by shortcode. "
-"IMPORTANT: You need to have a contract with https://www.raisenow.com/en to "
-"use this plugin."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Cyrill Bolliger | Grüne Schweiz | Les verts suisses"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://github.com/cyrillbolliger"
-msgstr ""
-
-#: includes/class-raisenow-community-frontend.php:38
-msgctxt "%s will be replaced with an example shortcode."
-msgid "Missing api key in shortcode. Shortcode must match the pattern: %s"
-msgstr ""
-
-#: includes/class-raisenow-community-frontend.php:45
-msgctxt ""
-"%1$s will be replaced with the accepted language keys. %2$s will be "
-"replaced with an example shortcode."
-msgid ""
-"Unknown language key in shortcode. Accepted values are %1$s. Shortcode must "
-"have the form: %2$s"
 msgstr ""
