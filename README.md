@@ -2,8 +2,8 @@
 **Contributors:** [cyrillbolliger](https://profiles.wordpress.org/cyrillbolliger)  
 **Tags:** donations, raisenow, fundraising  
 **Requires at least:** 4.9  
-**Tested up to:** 4.9.1  
-**Stable tag:** 1.0.0  
+**Tested up to:** 5.2.1
+**Stable tag:** 1.1.0
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -27,6 +27,12 @@ Once you've got the contract signed, [RaiseNow](https://raisenow.com/) will prov
 Same as any other standard WordPress plugin.
 
 ## Changelog ##
+
+### 1.1 ###
+* Replace per form api-key with a global api-key
+* Hide detailed error messages from non privileged users
+* Cleanup translations
+* Cleanup js dependencies
 
 ### 1.0 ###
 * Initial release
