@@ -36,6 +36,18 @@ class Raisenow_Community_Frontend {
 
 		$api_key = trim( $api_key );
 
+		/**
+		 * Migration function: Add the form api key as global api key
+		 *
+		 * Since we had an API key per form prior to version 1.1.0 we
+		 * add the first forms api key as global key.
+		 *
+		 * @since 1.1.0
+		 */
+		if ( $api_key && empty( $options['api_key'] ) ) {
+			$this->legacy_add_api_key_to_global_settings( $api_key );
+		}
+
 		if ( empty( $api_key ) ) {
 			if ( current_user_can( 'manage_options' ) ) {
 				$settings_link = admin_url( 'options-general.php?page=' . RAISENOW_COMMUNITY_PREFIX . '_donation_settings' );
@@ -72,5 +84,18 @@ class Raisenow_Community_Frontend {
 		       . '<script type="text/javascript">' . $custom_script . '</script>'
 		       . '<style type="text/css">' . $custom_css . '</style>'
 		       . '</div>';
+	}
+
+	/**
+	 * Add the given API key to the global settings.
+	 *
+	 * This function is used to migrate from plugins version prior 1.1.0.
+	 *
+	 * @param $api_key
+	 */
+	private function legacy_add_api_key_to_global_settings( $api_key ) {
+		$options            = get_option( RAISENOW_COMMUNITY_PREFIX . '_donation_options' );
+		$options['api_key'] = $api_key;
+		update_option( RAISENOW_COMMUNITY_PREFIX . '_donation_options', $options );
 	}
 }
