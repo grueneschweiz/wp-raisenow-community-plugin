@@ -53,7 +53,7 @@ class Raisenow_Community_Frontend {
 				$settings_link = admin_url( 'options-general.php?page=' . RAISENOW_COMMUNITY_PREFIX . '_donation_settings' );
 
 				return '<div>'
-				       . sprintf( _x( 'Donation form: Missing api key. Add the API key you received from RaiseNow on in your %splugin settings.%s', 'HTML link tag to the settings page', RAISENOW_COMMUNITY_PREFIX ),
+				       . sprintf( _x( 'Donation form: Missing api key. Add the API key you received from RaiseNow to your %splugin settings%s.', 'HTML link tag to the settings page', RAISENOW_COMMUNITY_PREFIX ),
 						'<a href="' . $settings_link . '" target="_blank">',
 						'</a>' )
 				       . '</div>';
