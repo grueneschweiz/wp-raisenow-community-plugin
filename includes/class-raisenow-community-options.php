@@ -19,17 +19,30 @@ class Raisenow_Community_Options {
 	public function init() {
 		register_setting( RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
 			RAISENOW_COMMUNITY_PREFIX . '_donation_options' );
-		
+
 		add_settings_section(
 			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
 			__( 'Customize donation form', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
 			[ &$this, 'donation_options_section_header' ],
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings'
 		);
-		
+
+		add_settings_field(
+			RAISENOW_COMMUNITY_PREFIX . '_api_key',
+			__( 'API key', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
+			[ &$this, 'render_api_key_option' ],
+			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
+			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
+			[
+				'option_id' => 'api_key',
+				'helptext'  => "<p>" . __( 'Enter your RaiseNow API key.',
+						RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ) . "</p>",
+			]
+		);
+
 		add_settings_field(
 			RAISENOW_COMMUNITY_PREFIX . '_javascript',
-			__( 'Add custom script', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
+			__( 'Custom script', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
 			[ &$this, 'render_custom_code_option' ],
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
 			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
@@ -44,7 +57,7 @@ class Raisenow_Community_Options {
 		
 		add_settings_field(
 			RAISENOW_COMMUNITY_PREFIX . '_css',
-			__( 'Add custom css', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
+			__( 'Custom css', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
 			[ &$this, 'render_custom_code_option' ],
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
 			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
@@ -61,7 +74,21 @@ class Raisenow_Community_Options {
 	public function donation_options_section_header() {
 		echo __( 'Use the options below to customize your donation form.', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' );
 	}
-	
+
+	public function render_api_key_option( $args ) {
+		$options_id = RAISENOW_COMMUNITY_PREFIX . '_donation_options';
+		$options    = get_option( $options_id );
+
+		if ( isset( $options[ $args['option_id'] ] ) ) {
+			$input = $options[ $args['option_id'] ];
+		} else {
+			$input = '';
+		}
+
+		echo $args['helptext'];
+		echo "<input type='text' class='regular-text' name='{$options_id}[{$args['option_id']}]' id='$options_id-{$args['option_id']}' value='$input'>";
+	}
+
 	public function render_custom_code_option( $args ) {
 		$options_id = RAISENOW_COMMUNITY_PREFIX . '_donation_options';
 		$options    = get_option( $options_id );

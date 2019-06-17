@@ -10,14 +10,6 @@
 								RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ),
 							'<a href="https://www.raisenow.com/">RaiseNow</a>' ) ?></p>
                 </div>
-                <p id="<?php echo RAISENOW_COMMUNITY_PREFIX ?>-select-donation_form-api_key"
-                   class="<?php echo RAISENOW_COMMUNITY_PREFIX ?>-short-code-input">
-                    <label for="<?php echo RAISENOW_COMMUNITY_PREFIX ?>-donation_form-api_key">
-						<?php _e( 'Enter the API key you received from RaiseNow', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ); ?>
-                    </label><br/>
-                    <input type="text" name="<?php echo RAISENOW_COMMUNITY_PREFIX ?>-donation_form-api_key"
-                           placeholder="<?php esc_attr_e( 'Enter the API key here.', RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ); ?>">
-                </p>
                 <p id="<?php echo RAISENOW_COMMUNITY_PREFIX ?>-select-donation_form-language"
                    class="<?php echo RAISENOW_COMMUNITY_PREFIX ?>-short-code-input">
                     <label for="<?php echo RAISENOW_COMMUNITY_PREFIX ?>-donation_form-language">
@@ -38,8 +30,3 @@
         </form>
     </div>
 </div>
-
-<script>
-    var raisenow_community_invalid_shortcode_msg = '<?php _e( 'Please enter the API key provided by RaiseNow.',
-		RAISENOW_COMMUNITY_PREFIX, 'raisenow-community' ) ?>';
-</script>
