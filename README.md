@@ -28,6 +28,9 @@ Same as any other standard WordPress plugin.
 
 ## Changelog ##
 
+### 1.2 ###
+* Provide convenient interface to customize amounts
+
 ### 1.1 ###
 * Replace per form api-key with a global api-key
 * Hide detailed error messages from non privileged users
