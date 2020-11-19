@@ -44,15 +44,17 @@ class Raisenow_Community_Frontend {
 			)
 		);
 
+		$defaults = array(
+			'api_key'   => $options['api_key'],
+			'language'  => '',
+			'css'       => '',
+			'class'     => 'raisenow_community_donation_form',
+			'add_class' => '',
+		);
+
 		extract(
 			shortcode_atts(
-				array(
-					'api_key'   => $options['api_key'],
-					'language'  => '',
-					'css'       => '',
-					'class'     => 'raisenow_community_donation_form',
-					'add_class' => '',
-				),
+				$defaults + $default_amounts,
 				$atts
 			)
 		);
