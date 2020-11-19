@@ -28,6 +28,9 @@ Same as any other standard WordPress plugin.
 
 ## Changelog ##
 
+### 1.2.1 ###
+* Fix: legacy forms showing amount 0 
+
 ### 1.2 ###
 * Provide convenient interface to customize amounts
 
