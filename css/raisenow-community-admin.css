@@ -24,3 +24,7 @@
 #raisenow-community-short-code-button input[name='raisenow-community-button-link'] {
     width: calc(100% - 41px);
 }
+
+#raisenow-community-select-donation_form-amounts {
+    margin-bottom: 2rem;
+}
