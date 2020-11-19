@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: RaiseNow donation forms 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
 "community\n"
-"POT-Creation-Date: 2019-06-17 12:27+0200\n"
+"POT-Creation-Date: 2020-11-20 00:03+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,35 +21,91 @@ msgstr ""
 "esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: admin/configuration-warning.php:4
+#, php-format
+msgid "You need to have a contract with %s."
+msgstr ""
+
+#: admin/configuration-warning.php:12
+#, php-format
+msgctxt "HTML link tag to the settings page"
+msgid ""
+"Missing API key. Add the API key you received from RaiseNow to your "
+"%splugin settings%s."
+msgstr ""
+
+#: admin/configuration-warning.php:19
+msgid "Missing api key. Please contact site administrator."
+msgstr ""
 
 #: admin/options.php:2
 msgid "Online donation options"
 msgstr ""
 
-#: admin/short-code-generator.php:9
-#, php-format
-msgid "You need to have a contract with %s to use this function."
+#: admin/short-code-generator.php:12
+msgid "Language"
 msgstr ""
 
-#: admin/short-code-generator.php:16
+#: admin/short-code-generator.php:14
 msgid "Choose language for the donation form"
 msgstr ""
 
-#: admin/short-code-generator.php:20
+#: admin/short-code-generator.php:21
 msgid "German"
 msgstr ""
 
-#: admin/short-code-generator.php:22
+#: admin/short-code-generator.php:24
 msgid "French"
 msgstr ""
 
-#: admin/short-code-generator.php:23
+#: admin/short-code-generator.php:27
 msgid "English"
 msgstr ""
 
-#: admin/short-code-generator.php:28
+#: admin/short-code-generator.php:32
+msgid "Amounts"
+msgstr ""
+
+#: admin/short-code-generator.php:33
+msgid "One Time Donations"
+msgstr ""
+
+#: admin/short-code-generator.php:34
+msgid ""
+"Set the predefined amounts for one time donations in CHF. Field 2 will be "
+"preselected."
+msgstr ""
+
+#: admin/short-code-generator.php:37 admin/short-code-generator.php:83
+msgid "Field 1"
+msgstr ""
+
+#: admin/short-code-generator.php:48 admin/short-code-generator.php:94
+msgid "Field 2"
+msgstr ""
+
+#: admin/short-code-generator.php:59 admin/short-code-generator.php:105
+msgid "Field 3"
+msgstr ""
+
+#: admin/short-code-generator.php:70 admin/short-code-generator.php:116
+msgid "Field 4"
+msgstr ""
+
+#: admin/short-code-generator.php:79
+msgid "Recurring Donations"
+msgstr ""
+
+#: admin/short-code-generator.php:80
+msgid ""
+"Set the predefined amounts for recurring donations in CHF. Field 2 will be "
+"preselected."
+msgstr ""
+
+#: admin/short-code-generator.php:128
 msgid "Insert shortcode"
 msgstr ""
 
@@ -58,7 +114,7 @@ msgstr ""
 msgid "Insert Donation Form"
 msgstr ""
 
-#: includes/class-raisenow-community-frontend.php:56
+#: includes/class-raisenow-community-frontend.php:79
 #, php-format
 msgctxt "HTML link tag to the settings page"
 msgid ""
@@ -66,18 +122,18 @@ msgid ""
 "to your %splugin settings%s."
 msgstr ""
 
-#: includes/class-raisenow-community-frontend.php:61
+#: includes/class-raisenow-community-frontend.php:84
 msgid "Donation form: Missing api key. Please contact site administrator."
 msgstr ""
 
-#: includes/class-raisenow-community-frontend.php:69
+#: includes/class-raisenow-community-frontend.php:92
 #, php-format
 msgid ""
 "Donation form: Unknown language key in shortcode. Accepted values are %1$s. "
 "Shortcode must have the form: %2$s"
 msgstr ""
 
-#: includes/class-raisenow-community-frontend.php:74
+#: includes/class-raisenow-community-frontend.php:97
 msgid ""
 "Donation form: Invalid language setting. Please contact site administrator."
 msgstr ""

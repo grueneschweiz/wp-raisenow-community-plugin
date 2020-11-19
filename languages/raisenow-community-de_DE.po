@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: RaiseNow donation forms\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
 "community\n"
-"POT-Creation-Date: 2019-06-17 12:27+0200\n"
-"PO-Revision-Date: 2019-06-17 12:27+0200\n"
+"POT-Creation-Date: 2020-11-20 00:03+0100\n"
+"PO-Revision-Date: 2020-11-20 00:06+0100\n"
 "Last-Translator: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language-Team: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -23,32 +23,94 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
+#: admin/configuration-warning.php:4
+#, php-format
+msgid "You need to have a contract with %s."
+msgstr "Du brauchst einen Vertrag mit %s."
+
+#: admin/configuration-warning.php:12
+#, php-format
+msgctxt "HTML link tag to the settings page"
+msgid ""
+"Missing API key. Add the API key you received from RaiseNow to your %splugin "
+"settings%s."
+msgstr ""
+"Fehlender API-Key. Füge deinen API-Key, den du von RaiseNow erhalten hast, "
+"den %sPlugin-Einstellungen%s hinzu."
+
+#: admin/configuration-warning.php:19
+msgid "Missing api key. Please contact site administrator."
+msgstr "Fehlender API-Key. Wende dich an den Administrator."
+
 #: admin/options.php:2
 msgid "Online donation options"
 msgstr "Online-Spenden Optionen"
 
-#: admin/short-code-generator.php:9
-#, php-format
-msgid "You need to have a contract with %s to use this function."
-msgstr "Du brauchst einen Vertrag mit %s, um diese Funktion nutzen zu können."
+#: admin/short-code-generator.php:12
+msgid "Language"
+msgstr "Sprache"
 
-#: admin/short-code-generator.php:16
+#: admin/short-code-generator.php:14
 msgid "Choose language for the donation form"
 msgstr "Wähle die Sprache des Spendenformulars"
 
-#: admin/short-code-generator.php:20
+#: admin/short-code-generator.php:21
 msgid "German"
 msgstr "Deutsch"
 
-#: admin/short-code-generator.php:22
+#: admin/short-code-generator.php:24
 msgid "French"
 msgstr "Französisch"
 
-#: admin/short-code-generator.php:23
+#: admin/short-code-generator.php:27
 msgid "English"
 msgstr "Englisch"
 
-#: admin/short-code-generator.php:28
+#: admin/short-code-generator.php:32
+msgid "Amounts"
+msgstr "Beträge"
+
+#: admin/short-code-generator.php:33
+msgid "One Time Donations"
+msgstr "Einmalige Spenden"
+
+#: admin/short-code-generator.php:34
+msgid ""
+"Set the predefined amounts for one time donations in CHF. Field 2 will be "
+"preselected."
+msgstr ""
+"Lege die vordefinierten Beträge für einmalige Spenden in CHF fest. Feld 2 "
+"wird vorausgewählt."
+
+#: admin/short-code-generator.php:37 admin/short-code-generator.php:83
+msgid "Field 1"
+msgstr "Feld 1"
+
+#: admin/short-code-generator.php:48 admin/short-code-generator.php:94
+msgid "Field 2"
+msgstr "Feld 2"
+
+#: admin/short-code-generator.php:59 admin/short-code-generator.php:105
+msgid "Field 3"
+msgstr "Feld 3"
+
+#: admin/short-code-generator.php:70 admin/short-code-generator.php:116
+msgid "Field 4"
+msgstr "Feld 4"
+
+#: admin/short-code-generator.php:79
+msgid "Recurring Donations"
+msgstr "Wiederkehrende Spenden"
+
+#: admin/short-code-generator.php:80
+msgid ""
+"Set the predefined amounts for recurring donations in CHF. Field 2 will be "
+"preselected."
+msgstr ""
+"Lege die vordefinierten Beträge für wiederkehrende Spenden in CHF fest. Feld "
+"2 wird vorausgewählt."
+
+#: admin/short-code-generator.php:128
 msgid "Insert shortcode"
 msgstr "Shortcode einfügen"
 
@@ -57,7 +119,7 @@ msgstr "Shortcode einfügen"
 msgid "Insert Donation Form"
 msgstr "Spendenformular einfügen"
 
-#: includes/class-raisenow-community-frontend.php:56
+#: includes/class-raisenow-community-frontend.php:79
 #, php-format
 msgctxt "HTML link tag to the settings page"
 msgid ""
@@ -67,11 +129,11 @@ msgstr ""
 "Spendenformular: Fehlender API-Key. Füge deinen API-Key, den du von RaiseNow "
 "erhalten hast, den %sPlugin-Einstellungen%s hinzu."
 
-#: includes/class-raisenow-community-frontend.php:61
+#: includes/class-raisenow-community-frontend.php:84
 msgid "Donation form: Missing api key. Please contact site administrator."
 msgstr "Spendenformular: Fehlender API-Key. Wende dich an den Administrator."
 
-#: includes/class-raisenow-community-frontend.php:69
+#: includes/class-raisenow-community-frontend.php:92
 #, php-format
 msgid ""
 "Donation form: Unknown language key in shortcode. Accepted values are %1$s. "
@@ -80,7 +142,7 @@ msgstr ""
 "Unbekannter Sprachschlüssel im Shortcode. Akzeptierte Werte sind %1$s. Der "
 "Shortcode muss die folgende Form haben: %2$s"
 
-#: includes/class-raisenow-community-frontend.php:74
+#: includes/class-raisenow-community-frontend.php:97
 msgid ""
 "Donation form: Invalid language setting. Please contact site administrator."
 msgstr ""
@@ -141,17 +203,15 @@ msgstr "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
 
 #. Description of the plugin/theme
 msgid ""
-"This community plugin lets you add RaiseNow donation forms by shortcode. "
-"IMPORTANT: You need to have a contract with https://www.raisenow.com/en to "
-"use this plugin."
+"Add RaiseNow donation forms by shortcode. IMPORTANT: You need to have a "
+"contract with https://www.raisenow.com/en to use this plugin."
 msgstr ""
-"Dieses Community-Plugin erlaubt es dir Spendenformulare von RaiseNow per "
-"Shortcode einzubetten. WICHTIG: Du brauchst einen Vertrag mit https://www."
-"raisenow.com um dieses Plugin nutzen zu können."
+"Bette Spendenformulare von RaiseNow per Shortcode ein. WICHTIG: Du brauchst "
+"einen Vertrag mit https://www.raisenow.com um dieses Plugin nutzen zu können."
 
 #. Author of the plugin/theme
-msgid "Cyrill Bolliger | Grüne Schweiz | Les verts suisses"
-msgstr "Cyrill Bolliger | Grüne Schweiz | Les Verts suisses"
+msgid "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
+msgstr "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
 
 #. Author URI of the plugin/theme
 msgid "https://github.com/cyrillbolliger"
