@@ -1,8 +1,8 @@
 # RaiseNow donation forms #
-**Contributors:** [cyrillbolliger](https://profiles.wordpress.org/cyrillbolliger)  
+**Contributors:** [cyrillbolliger](https://profiles.wordpress.org/cyrillbolliger), [phil8900](https://github.com/phil8900/)
 **Tags:** donations, raisenow, fundraising  
 **Requires at least:** 4.9  
-**Tested up to:** 5.2.1
+**Tested up to:** 5.6
 **Stable tag:** 1.2.1
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
@@ -12,7 +12,7 @@ Add configurable RaiseNow donation forms using shortcode.
 
 ## Description ##
 
-Integrating the LEMA widget from [RaiseNow](https://raisenow.com/) could not be easier: Just install this plugin,
+Integrating the LEMA or TAMARO widget from [RaiseNow](https://raisenow.com/) could not be easier: Just install this plugin,
 edit the page where you want the donation form to appear, click the **Insert donation form** button and enter the
 API-key provided from RaiseNow. That's it!
 
