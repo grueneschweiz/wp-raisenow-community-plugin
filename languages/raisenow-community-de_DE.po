@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: RaiseNow donation forms\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
 "community\n"
-"POT-Creation-Date: 2020-11-20 00:03+0100\n"
-"PO-Revision-Date: 2020-11-20 00:06+0100\n"
+"POT-Creation-Date: 2020-12-10 09:41+0100\n"
+"PO-Revision-Date: 2020-12-10 09:42+0100\n"
 "Last-Translator: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language-Team: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language: de\n"
@@ -119,7 +119,7 @@ msgstr "Shortcode einfügen"
 msgid "Insert Donation Form"
 msgstr "Spendenformular einfügen"
 
-#: includes/class-raisenow-community-frontend.php:79
+#: includes/class-raisenow-community-frontend.php:81
 #, php-format
 msgctxt "HTML link tag to the settings page"
 msgid ""
@@ -129,11 +129,11 @@ msgstr ""
 "Spendenformular: Fehlender API-Key. Füge deinen API-Key, den du von RaiseNow "
 "erhalten hast, den %sPlugin-Einstellungen%s hinzu."
 
-#: includes/class-raisenow-community-frontend.php:84
+#: includes/class-raisenow-community-frontend.php:86
 msgid "Donation form: Missing api key. Please contact site administrator."
 msgstr "Spendenformular: Fehlender API-Key. Wende dich an den Administrator."
 
-#: includes/class-raisenow-community-frontend.php:92
+#: includes/class-raisenow-community-frontend.php:94
 #, php-format
 msgid ""
 "Donation form: Unknown language key in shortcode. Accepted values are %1$s. "
@@ -142,7 +142,7 @@ msgstr ""
 "Unbekannter Sprachschlüssel im Shortcode. Akzeptierte Werte sind %1$s. Der "
 "Shortcode muss die folgende Form haben: %2$s"
 
-#: includes/class-raisenow-community-frontend.php:97
+#: includes/class-raisenow-community-frontend.php:99
 msgid ""
 "Donation form: Invalid language setting. Please contact site administrator."
 msgstr ""
@@ -154,33 +154,43 @@ msgid "Customize donation form"
 msgstr "Spendenformular anpassen"
 
 #: includes/class-raisenow-community-options.php:32
+msgid "Widget type"
+msgstr "Widget-Typ"
+
+#: includes/class-raisenow-community-options.php:38
+msgid "Enter your RaiseNow widget type. Can either be lema (default) or tamaro"
+msgstr ""
+"Geb deinen RaiseNow Widget-Typ ein. Hier kann entweder lema (Standard) oder "
+"tamaro eingegeben werden"
+
+#: includes/class-raisenow-community-options.php:44
 msgid "API key"
 msgstr "API-Key"
 
-#: includes/class-raisenow-community-options.php:38
+#: includes/class-raisenow-community-options.php:50
 msgid "Enter your RaiseNow API key."
 msgstr "Gib den RaiseNow API-Key hier ein."
 
-#: includes/class-raisenow-community-options.php:44
+#: includes/class-raisenow-community-options.php:56
 msgid "Custom script"
 msgstr "Benutzerdefiniertes Skript"
 
-#: includes/class-raisenow-community-options.php:50
+#: includes/class-raisenow-community-options.php:62
 msgid "Enter your javascript below. It will be applied to all donation forms."
 msgstr ""
 "Geb dein JavaScript unten ein. Es wird auf alle Spendenformulare angewendet."
 
-#: includes/class-raisenow-community-options.php:59
+#: includes/class-raisenow-community-options.php:71
 msgid "Custom css"
 msgstr "Benutzerdefiniertes CSS"
 
-#: includes/class-raisenow-community-options.php:65
+#: includes/class-raisenow-community-options.php:77
 msgid "Enter your custom css below. It will be applied to all donation forms."
 msgstr ""
 "Gib dein benutzerdefiniertes CSS unten ein. Es wird auf alle "
 "Spendenformulare angewendet."
 
-#: includes/class-raisenow-community-options.php:74
+#: includes/class-raisenow-community-options.php:86
 msgid "Use the options below to customize your donation form."
 msgstr "Verwende die folgenden Optionen, um dein Spendenformular anzupassen."
 
