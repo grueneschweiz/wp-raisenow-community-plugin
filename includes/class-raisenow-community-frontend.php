@@ -116,9 +116,9 @@ class Raisenow_Community_Frontend {
 
 		$custom_css    = $options['css'];
 		$custom_script = $options['javascript'];
-		$form_type = $options['form_type'];
+		$widget_type = $options['widget_type'];
 
-		if($form_type == 'tamaro'){
+		if($widget_type == 'tamaro'){
 			return '<div class="' . esc_attr( $class ) . ' ' . esc_attr( $add_class ) . '" style="' . esc_attr( $css ) . '">'
 			. '<div class="dds-widget-container"></div>'
 			. '<script language="javascript" src="https://tamaro.raisenow.com/' . esc_attr( $api_key ) . '/latest/widget.js" type="text/javascript"></script>'

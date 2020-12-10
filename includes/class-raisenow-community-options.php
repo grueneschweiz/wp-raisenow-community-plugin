@@ -28,14 +28,14 @@ class Raisenow_Community_Options {
 		);
 
 		add_settings_field(
-			RAISENOW_COMMUNITY_PREFIX . '_form_type',
-			__( 'Form type', RAISENOW_COMMUNITY_PREFIX ),
+			RAISENOW_COMMUNITY_PREFIX . '_widget_type',
+			__( 'Widget type', RAISENOW_COMMUNITY_PREFIX ),
 			[ &$this, 'render_api_key_option' ],
 			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
 			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
 			[
-				'option_id' => 'form_type',
-				'helptext'  => "<p>" . __( 'Enter your RaiseNow Form type. Can either be lema (default) or tamaro', RAISENOW_COMMUNITY_PREFIX ) . "</p>",
+				'option_id' => 'widget_type',
+				'helptext'  => "<p>" . __( 'Enter your RaiseNow widget type. Can either be lema (default) or tamaro', RAISENOW_COMMUNITY_PREFIX ) . "</p>",
 			]
 		);
 
