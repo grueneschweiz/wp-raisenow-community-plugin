@@ -1,5 +1,5 @@
 # RaiseNow donation forms #
-**Contributors:** [cyrillbolliger](https://profiles.wordpress.org/cyrillbolliger), [phil8900](https://github.com/phil8900/)
+**Contributors:** [cyrillbolliger](https://profiles.wordpress.org/cyrillbolliger), [phil8900](https://github.com/phil8900/)  
 **Tags:** donations, raisenow, fundraising  
 **Requires at least:** 4.9  
 **Tested up to:** 5.6
