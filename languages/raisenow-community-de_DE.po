@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: RaiseNow donation forms\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
 "community\n"
-"POT-Creation-Date: 2020-12-10 09:41+0100\n"
-"PO-Revision-Date: 2020-12-10 09:42+0100\n"
+"POT-Creation-Date: 2020-12-14 11:29+0100\n"
+"PO-Revision-Date: 2020-12-14 11:31+0100\n"
 "Last-Translator: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language-Team: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language: de\n"
@@ -154,22 +154,24 @@ msgid "Customize donation form"
 msgstr "Spendenformular anpassen"
 
 #: includes/class-raisenow-community-options.php:32
-msgid "Widget type"
-msgstr "Widget-Typ"
-
-#: includes/class-raisenow-community-options.php:38
-msgid "Enter your RaiseNow widget type. Can either be lema (default) or tamaro"
-msgstr ""
-"Geb deinen RaiseNow Widget-Typ ein. Hier kann entweder lema (Standard) oder "
-"tamaro eingegeben werden"
-
-#: includes/class-raisenow-community-options.php:44
 msgid "API key"
 msgstr "API-Key"
 
-#: includes/class-raisenow-community-options.php:50
+#: includes/class-raisenow-community-options.php:38
 msgid "Enter your RaiseNow API key."
 msgstr "Gib den RaiseNow API-Key hier ein."
+
+#: includes/class-raisenow-community-options.php:44
+msgid "Widget type"
+msgstr "Widget-Typ"
+
+#: includes/class-raisenow-community-options.php:50
+msgid ""
+"Select your RaiseNow widget type. Check the onboarding email of RaiseNow to "
+"find out which widget type you should choose."
+msgstr ""
+"Wähle den RaiseNow Widget-Typ. Schaue in der Onboarding-Email von RaiseNow, "
+"welchen Widget-Typ du wählen solltest."
 
 #: includes/class-raisenow-community-options.php:56
 msgid "Custom script"
@@ -226,6 +228,12 @@ msgstr "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
 #. Author URI of the plugin/theme
 msgid "https://github.com/cyrillbolliger"
 msgstr "https://github.com/cyrillbolliger"
+
+#~ msgid ""
+#~ "Enter your RaiseNow widget type. Can either be lema (default) or tamaro"
+#~ msgstr ""
+#~ "Geb deinen RaiseNow Widget-Typ ein. Hier kann entweder lema (Standard) "
+#~ "oder tamaro eingegeben werden"
 
 #~ msgid "Enter the API key you received from RaiseNow"
 #~ msgstr "Gib den API-Key ein, den du von RaiseNow erhalten hast"

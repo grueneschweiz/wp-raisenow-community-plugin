@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: RaiseNow donation forms 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
 "community\n"
-"POT-Creation-Date: 2020-12-10 09:36+0100\n"
+"POT-Creation-Date: 2020-12-14 11:29+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -143,20 +143,21 @@ msgid "Customize donation form"
 msgstr ""
 
 #: includes/class-raisenow-community-options.php:32
-msgid "Widget type"
-msgstr ""
-
-#: includes/class-raisenow-community-options.php:38
-msgid ""
-"Enter your RaiseNow widget type. Can either be lema (default) or tamaro"
-msgstr ""
-
-#: includes/class-raisenow-community-options.php:44
 msgid "API key"
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:50
+#: includes/class-raisenow-community-options.php:38
 msgid "Enter your RaiseNow API key."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:44
+msgid "Widget type"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:50
+msgid ""
+"Select your RaiseNow widget type. Check the onboarding email of RaiseNow to "
+"find out which widget type you should choose."
 msgstr ""
 
 #: includes/class-raisenow-community-options.php:56
