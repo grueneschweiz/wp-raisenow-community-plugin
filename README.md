@@ -28,6 +28,10 @@ Same as any other standard WordPress plugin.
 
 ## Changelog ##
 
+### 1.3.0 ###
+* Added support for the TAMARO widget
+* Tested up to WordPress 5.6.0
+
 ### 1.2.1 ###
 * Fix: legacy forms showing amount 0 
 
