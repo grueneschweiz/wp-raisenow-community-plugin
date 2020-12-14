@@ -40,6 +40,18 @@ class Raisenow_Community_Options {
 		);
 
 		add_settings_field(
+			RAISENOW_COMMUNITY_PREFIX . '_widget_type',
+			__( 'Widget type', RAISENOW_COMMUNITY_PREFIX ),
+			[ &$this, 'render_widget_type_option' ],
+			RAISENOW_COMMUNITY_PREFIX . '_donation_settings',
+			RAISENOW_COMMUNITY_PREFIX . '_donation_section',
+			[
+				'option_id' => 'widget_type',
+				'helptext'  => "<p>" . __( 'Select your RaiseNow widget type. Check the onboarding email of RaiseNow to find out which widget type you should choose.', RAISENOW_COMMUNITY_PREFIX ) . "</p>",
+			]
+		);
+
+		add_settings_field(
 			RAISENOW_COMMUNITY_PREFIX . '_javascript',
 			__( 'Custom script', RAISENOW_COMMUNITY_PREFIX ),
 			[ &$this, 'render_custom_code_option' ],
@@ -86,6 +98,30 @@ class Raisenow_Community_Options {
 
 		echo $args['helptext'];
 		echo "<input type='text' class='regular-text' name='{$options_id}[{$args['option_id']}]' id='$options_id-{$args['option_id']}' value='$input'>";
+	}
+
+	public function render_widget_type_option( $args ) {
+		$options_id = RAISENOW_COMMUNITY_PREFIX . '_donation_options';
+		$options    = get_option( $options_id );
+
+		if ( isset( $options[ $args['option_id'] ] ) ) {
+			$default = $options[ $args['option_id'] ];
+		} else {
+			$default = 'lema';
+		}
+
+		$lema   = checked('lema', $default, false);
+		$tamaro = checked('tamaro', $default, false);
+
+		echo <<<EOT
+<fieldset>
+	<legend>{$args['helptext']}</legend>
+	<input type="radio" value="lema" name="{$options_id}[{$args['option_id']}]" id="$options_id-{$args['option_id']}-lema"$lema>
+	<label for="$options_id-{$args['option_id']}-lema">LEMA</label><br>
+	<input type="radio" value="tamaro" name="{$options_id}[{$args['option_id']}]" id="$options_id-{$args['option_id']}-tamaro"$tamaro>
+	<label for="$options_id-{$args['option_id']}-tamaro">TAMARO</label>
+</fieldset>
+EOT;
 	}
 
 	public function render_custom_code_option( $args ) {
