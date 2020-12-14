@@ -123,7 +123,7 @@ class Raisenow_Community_Frontend {
 			. '<div class="dds-widget-container"></div>'
 			. '<script language="javascript" src="https://tamaro.raisenow.com/' . esc_attr( $api_key ) . '/latest/widget.js" type="text/javascript"></script>'
 			. '<script type="text/javascript">' . $custom_script . '</script>'
-			. "<script>window.rnw.tamaro.runWidget('.dds-widget-container', {language: 'de'});</script>"
+			. "<script>window.rnw.tamaro.runWidget('.dds-widget-container', {language: '$language'});</script>"
 			. '<style type="text/css">' . $custom_css . '</style>'
 			. '</div>';
 		}
