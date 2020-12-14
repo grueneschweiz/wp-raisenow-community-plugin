@@ -110,7 +110,7 @@ class Raisenow_Community_Options {
 			$default = 'lema';
 		}
 
-		$lema = checked('lema', $default, false);
+		$lema   = checked('lema', $default, false);
 		$tamaro = checked('tamaro', $default, false);
 
 		echo <<<EOT

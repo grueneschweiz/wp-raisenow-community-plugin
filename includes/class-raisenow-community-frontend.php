@@ -116,26 +116,24 @@ class Raisenow_Community_Frontend {
 
 		$custom_css    = $options['css'];
 		$custom_script = $options['javascript'];
-		$widget_type = $options['widget_type'];
+		$widget_type   = $options['widget_type'];
 
-		if($widget_type == 'tamaro'){
+		if ( $widget_type == 'tamaro' ) {
 			return '<div class="' . esc_attr( $class ) . ' ' . esc_attr( $add_class ) . '" style="' . esc_attr( $css ) . '">'
-			. '<div class="dds-widget-container"></div>'
-			. '<script language="javascript" src="https://tamaro.raisenow.com/' . esc_attr( $api_key ) . '/latest/widget.js" type="text/javascript"></script>'
-			. '<script type="text/javascript">' . $custom_script . '</script>'
-			. "<script>window.rnw.tamaro.runWidget('.dds-widget-container', {language: '$language'});</script>"
-			. '<style type="text/css">' . $custom_css . '</style>'
-			. '</div>';
-		}
-
-		else{
+			       . '<div class="dds-widget-container"></div>'
+			       . '<script language="javascript" src="https://tamaro.raisenow.com/' . esc_attr( $api_key ) . '/latest/widget.js" type="text/javascript"></script>'
+			       . '<script type="text/javascript">' . $custom_script . '</script>'
+			       . "<script>window.rnw.tamaro.runWidget('.dds-widget-container', {language: '$language'});</script>"
+			       . '<style type="text/css">' . $custom_css . '</style>'
+			       . '</div>';
+		} else {
 			return '<div class="' . esc_attr( $class ) . ' ' . esc_attr( $add_class ) . '" style="' . esc_attr( $css ) . '">'
-			. '<div class="dds-widget-container" data-widget="lema"></div>'
-		    . '<script language="javascript" src="https://widget.raisenow.com/widgets/lema/' . esc_attr( $api_key ) . '/js/dds-init-widget-' . esc_attr( $language ) . '.js" type="text/javascript"></script>'
-		    . '<script type="text/javascript">' . $custom_script . '</script>'
-		    . '<script type="text/javascript">' . $this->amounts_js( $one_time_amounts, $recurring_amounts ) . '</script>'
-		    . '<style type="text/css">' . $custom_css . '</style>'
-		    . '</div>';	
+			       . '<div class="dds-widget-container" data-widget="lema"></div>'
+			       . '<script language="javascript" src="https://widget.raisenow.com/widgets/lema/' . esc_attr( $api_key ) . '/js/dds-init-widget-' . esc_attr( $language ) . '.js" type="text/javascript"></script>'
+			       . '<script type="text/javascript">' . $custom_script . '</script>'
+			       . '<script type="text/javascript">' . $this->amounts_js( $one_time_amounts, $recurring_amounts ) . '</script>'
+			       . '<style type="text/css">' . $custom_css . '</style>'
+			       . '</div>';
 		}
 	}
 
