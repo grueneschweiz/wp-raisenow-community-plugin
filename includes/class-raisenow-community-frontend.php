@@ -56,7 +56,8 @@ class Raisenow_Community_Frontend {
 			shortcode_atts(
 				$defaults + $default_amounts,
 				$atts
-			)
+			),
+			EXTR_OVERWRITE
 		);
 
 		$api_key = trim( $api_key );
@@ -87,7 +88,7 @@ class Raisenow_Community_Frontend {
 			}
 		}
 
-		$language = trim( strtolower( $language ) );
+		$language = strtolower( trim( $language ) );
 		if ( ! in_array( $language, $languages ) ) {
 			$id = get_the_ID();
 			if ( current_user_can( 'edit_posts', $id ) || current_user_can( 'edit_pages', $id ) ) {
@@ -118,12 +119,13 @@ class Raisenow_Community_Frontend {
 		$custom_script = $options['javascript'];
 		$widget_type   = $options['widget_type'];
 
-		if ( $widget_type == 'tamaro' ) {
+		if ( $widget_type === 'tamaro' ) {
 			return '<div class="' . esc_attr( $class ) . ' ' . esc_attr( $add_class ) . '" style="' . esc_attr( $css ) . '">'
-			       . '<div class="dds-widget-container"></div>'
+			       . '<div class="rnw-widget-container"></div>'
 			       . '<script language="javascript" src="https://tamaro.raisenow.com/' . esc_attr( $api_key ) . '/latest/widget.js" type="text/javascript"></script>'
 			       . '<script type="text/javascript">' . $custom_script . '</script>'
-			       . "<script>window.rnw.tamaro.runWidget('.dds-widget-container', {language: '$language'});</script>"
+			       . '<script type="text/javascript">' . $this->amounts_js_tamaro( $one_time_amounts, $recurring_amounts ) . '</script>'
+			       . "<script>window.rnw.tamaro.runWidget('.rnw-widget-container', {language: '$language'});</script>"
 			       . '<style type="text/css">' . $custom_css . '</style>'
 			       . '</div>';
 		} else {
@@ -131,7 +133,7 @@ class Raisenow_Community_Frontend {
 			       . '<div class="dds-widget-container" data-widget="lema"></div>'
 			       . '<script language="javascript" src="https://widget.raisenow.com/widgets/lema/' . esc_attr( $api_key ) . '/js/dds-init-widget-' . esc_attr( $language ) . '.js" type="text/javascript"></script>'
 			       . '<script type="text/javascript">' . $custom_script . '</script>'
-			       . '<script type="text/javascript">' . $this->amounts_js( $one_time_amounts, $recurring_amounts ) . '</script>'
+			       . '<script type="text/javascript">' . $this->amounts_js_lema( $one_time_amounts, $recurring_amounts ) . '</script>'
 			       . '<style type="text/css">' . $custom_css . '</style>'
 			       . '</div>';
 		}
@@ -151,22 +153,64 @@ class Raisenow_Community_Frontend {
 	}
 
 	/**
-	 * Returns the JS to inject in order to customize the amounts.
+	 * Returns the JS to inject in order to customize the amounts in lema form.
 	 *
 	 * @param array $one_time
 	 * @param array $recurring
 	 *
 	 * @return string
 	 */
-	private function amounts_js( $one_time, $recurring ) {
+	private function amounts_js_lema( $one_time, $recurring ) {
 		return 'window.rnwWidget = window.rnwWidget || {};'
 		       . 'window.rnwWidget.configureWidget = window.rnwWidget.configureWidget || [];'
 		       . 'window.rnwWidget.configureWidget.push(function(options) {'
-		       . 'options.translations.step_amount.onetime_amounts = ' . $this->get_amounts_json( $one_time ) . ';'
-		       . 'options.translations.step_amount.recurring_amounts = ' . $this->get_amounts_json( $recurring ) . ';'
+		       . 'options.translations.step_amount.onetime_amounts = ' . $this->get_lema_amounts_json( $one_time ) . ';'
+		       . 'options.translations.step_amount.recurring_amounts = ' . $this->get_lema_amounts_json( $recurring ) . ';'
 		       . "options.defaults['ui_onetime_amount_default'] = " . (int) $one_time[2] * 100 . ';'
 		       . "options.defaults['ui_recurring_amount_default'] = " . (int) $recurring[2] * 100 . ';'
 		       . '});';
+	}
+
+	/**
+	 * Returns the JS to inject in order to customize the amounts in tamaro form.
+	 *
+	 * @param array $one_time
+	 * @param array $recurring
+	 *
+	 * @return string
+	 */
+	private function amounts_js_tamaro( $one_time, $recurring ) {
+		$one_time_amounts_string = implode( ',', $one_time);
+		$recurring_amounts_strings = $this->get_tamaro_recurring_amounts($recurring);
+
+		return <<<EOJS
+if (window.rnw && window.rnw.tamaro) {
+	window.rnw.tamaro.runWidget('.rnw-widget-container', {
+	  amounts: [
+	    {
+	       "if": "paymentType() === onetime",
+	       "then": [$one_time_amounts_string],
+	    },
+	    {
+	       "if": "paymentType() === recurring && recurringInterval() === monthly",
+	       "then": [{$recurring_amounts_strings['monthly']}],
+	    },
+	    {
+	       "if": "paymentType() === recurring && recurringInterval() === quarterly",
+	       "then": [{$recurring_amounts_strings['quarterly']}],
+	    },
+	    {
+	       "if": "paymentType() === recurring && recurringInterval() === semestral",
+	       "then": [{$recurring_amounts_strings['semestral']}],
+	    },
+	    {
+	       "if": "paymentType() === recurring && recurringInterval() === yearly",
+	       "then": [{$recurring_amounts_strings['yearly']}],
+	    },
+	  ],
+	});
+}
+EOJS;
 	}
 
 	/**
@@ -176,7 +220,7 @@ class Raisenow_Community_Frontend {
 	 *
 	 * @return false|string
 	 */
-	private function get_amounts_json( $amounts ) {
+	private function get_lema_amounts_json( $amounts ) {
 		$ret = [];
 		foreach ( $amounts as $amount ) {
 			$a     = (int) $amount;
@@ -184,5 +228,64 @@ class Raisenow_Community_Frontend {
 		}
 
 		return json_encode( $ret );
+	}
+
+	/**
+	 * Extrapolate the monthly amounts for recurring donations for quarterly,
+	 * semestral and yearly recurring donations.
+	 *
+	 * @param array $amounts amounts for monthly recurring donations
+	 *
+	 * @return array with the indexes 'monthly', 'quarterly', 'semestral', 'yearly'
+	 */
+	private function get_tamaro_recurring_amounts( $amounts ) {
+		$monthly   = implode( ',', $amounts );
+		$quarterly = implode( ',',
+			array_map(
+				static function ( $amount ) {
+					/**
+					 * Filters the multiplier to extrapolate the amount of
+					 * monthly recurring donations to quarterly donations.
+					 *
+					 * @param int The default multiplier
+					 *
+					 * @since 1.4.0
+					 */
+					return $amount * apply_filters( RAISENOW_COMMUNITY_PREFIX . '_quarterly_amount_multiplier', 3 );
+				},
+				$amounts )
+		);
+		$semestral = implode( ',',
+			array_map(
+				static function ( $amount ) {
+					/**
+					 * Filters the multiplier to extrapolate the amount of
+					 * monthly recurring donations to semestral donations.
+					 *
+					 * @param int The default multiplier
+					 *
+					 * @since 1.4.0
+					 */
+					return $amount * apply_filters( RAISENOW_COMMUNITY_PREFIX . '_semestral_amount_multiplier', 6 );
+				},
+				$amounts )
+		);
+		$yearly    = implode( ',',
+			array_map(
+				static function ( $amount ) {
+					/**
+					 * Filters the multiplier to extrapolate the amount of
+					 * monthly recurring donations to yearly donations.
+					 *
+					 * @param int The default multiplier
+					 *
+					 * @since 1.4.0
+					 */
+					return $amount * apply_filters( RAISENOW_COMMUNITY_PREFIX . '_yearly_amount_multiplier', 12 );
+				},
+				$amounts )
+		);
+
+		return compact('monthly', 'quarterly', 'semestral', 'yearly' );
 	}
 }
