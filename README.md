@@ -3,7 +3,7 @@
 **Tags:** donations, raisenow, fundraising  
 **Requires at least:** 4.9  
 **Tested up to:** 5.6.0
-**Stable tag:** 1.3.0
+**Stable tag:** 1.4.0
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -27,6 +27,10 @@ Once you've got the contract signed, [RaiseNow](https://raisenow.com/) will prov
 Same as any other standard WordPress plugin.
 
 ## Changelog ##
+
+### 1.4.0 ###
+* Support to customize amounts with TAMARO widget
+* Minor improvements
 
 ### 1.3.0 ###
 * Added support for the TAMARO widget
@@ -77,4 +81,3 @@ Please refer to the [Docker Compose documentation][docker-compose] for more
 information about starting, stopping, and interacting with your environment.
 
 Log in to `/wp-admin/` with **Username** `wordpress` and **Password** `wordpress`.
-###

@@ -1,9 +1,9 @@
 === RaiseNow donation forms ===
-Contributors: cyrillbolliger
+Contributors: cyrillbolliger, phil8900
 Tags: donations, raisenow, fundraising
 Requires at least: 4.9
-Tested up to: 5.2.1
-Stable tag: 1.1.0
+Tested up to: 5.6.0
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,21 +12,39 @@ IMPORTANT: You need to have a contract with RaiseNow.
 
 == Description ==
 
-Integrating the LEMA widget from [RaiseNow](https://raisenow.com/) could not be easier: Just install this plugin,
-edit the page where you want the donation form to appear, click the **Insert donation form** button and enter the
+Integrating the LEMA or TAMARO widget from [RaiseNow](https://raisenow.com/)
+could not be easier: Just install this plugin, edit the page where you want the
+donation form to appear, click the **Insert donation form** button and enter the
 API-key provided from RaiseNow. That's it!
 
-You may want to **configure** the widgets style or inject some custom javascript? Just head over to the settings panel,
-the options page is waiting for you.
+You may want to **configure** the widgets style or inject some custom
+javascript? Just head over to the settings panel, the options page is waiting
+for you.
 
-**IMPORTANT:** You'll need to get a contract with [RaiseNow](https://raisenow.com/), before you can use this plugin.
-Once you've got the contract signed, [RaiseNow](https://raisenow.com/) will provide you your API-Key.
+**IMPORTANT:** You'll need to get a contract with
+[RaiseNow](https://raisenow.com/), before you can use this plugin. Once you've
+got the contract signed, [RaiseNow](https://raisenow.com/) will provide you your
+API-Key.
 
 == Installation ==
 
 Same as any other standard WordPress plugin.
 
 == Changelog ==
+
+= 1.4.0 =
+* Support to customize amounts with TAMARO widget
+* Minor improvements
+
+= 1.3.0 =
+* Added support for the TAMARO widget
+* Tested up to WordPress 5.6.0
+
+= 1.2.1 =
+* Fix: legacy forms showing amount 0
+
+= 1.2 =
+* Provide convenient interface to customize amounts
 
 = 1.1 =
 * Replace per form api-key with a global api-key
@@ -66,4 +84,5 @@ docker-compose logs wordpress
 Please refer to the [Docker Compose documentation][docker-compose] for more
 information about starting, stopping, and interacting with your environment.
 
-Log in to `/wp-admin/` with **Username** `wordpress` and **Password** `wordpress`.
+Log in to `/wp-admin/` with **Username** `wordpress` and **Password**
+`wordpress`.
