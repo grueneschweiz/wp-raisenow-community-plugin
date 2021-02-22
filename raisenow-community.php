@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 /**
  * abspath to plugins directory
  */
-define( 'RAISENOW_COMMUNITY_PATH', dirname( __FILE__ ) );
+define( 'RAISENOW_COMMUNITY_PATH', __DIR__ );
 
 /**
  * version number (don't forget to change it also in the header)
@@ -76,7 +76,7 @@ class Raisenow_Community_Main {
 			'custom_css',
 			'customize_changeset'
 		);
-		if ( $context->post_type && ! in_array( $context->post_type, $excluded_post_types ) ) {
+		if ( $context->post_type && ! in_array( $context->post_type, $excluded_post_types, true ) ) {
 			add_action( 'admin_enqueue_scripts', array( &$this, 'load_resources' ) );
 			
 			require_once( RAISENOW_COMMUNITY_PATH . '/includes/class-raisenow-community-admin.php' );
@@ -107,16 +107,14 @@ class Raisenow_Community_Main {
 	/**
 	 * register frontend hooks
 	 */
-	public
-	function add_frontend() {
+	public function add_frontend() {
 		add_action( 'init', array( &$this, 'short_code_handler' ) );
 	}
 	
 	/**
 	 * hook in the shortcodes
 	 */
-	public
-	function short_code_handler() {
+	public function short_code_handler() {
 		require_once( RAISENOW_COMMUNITY_PATH . '/includes/class-raisenow-community-frontend.php' );
 		add_shortcode( 'donation_form', array( new Raisenow_Community_Frontend(), 'donation_form' ) );
 	}
@@ -124,8 +122,7 @@ class Raisenow_Community_Main {
 	/**
 	 * Add a menu
 	 */
-	public
-	function add_menu() {
+	public function add_menu() {
 		add_options_page(
 			__( 'Online donations', RAISENOW_COMMUNITY_PREFIX ),
 			__( 'Online donations', RAISENOW_COMMUNITY_PREFIX ),
@@ -138,8 +135,7 @@ class Raisenow_Community_Main {
 	/**
 	 * Menu Callback
 	 */
-	public
-	function display_plugin_optionspage() {
+	public function display_plugin_optionspage() {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( __( 'You do not have sufficient permissions to access this page.', RAISENOW_COMMUNITY_PREFIX ) );
 		}
@@ -154,8 +150,7 @@ class Raisenow_Community_Main {
 	 * Note: Put the translation in the languages folder in the plugins directory,
 	 * name the translation files like "nameofplugin-lanugage_COUUNTRY.po". Ex: "raisenow-community-fr_FR.po"
 	 */
-	public
-	function i18n() {
+	public function i18n() {
 		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
 		load_plugin_textdomain( RAISENOW_COMMUNITY_PREFIX, false, $path );
 	}
@@ -163,8 +158,7 @@ class Raisenow_Community_Main {
 	/**
 	 * load ressources (js, css)
 	 */
-	public
-	function load_resources() {
+	public function load_resources() {
 		// css
 		$style = RAISENOW_COMMUNITY_PREFIX . '-admin-css';
 		if ( ! wp_style_is( $style, 'enqueued' ) ) {

@@ -56,7 +56,8 @@ class Raisenow_Community_Frontend {
 			shortcode_atts(
 				$defaults + $default_amounts,
 				$atts
-			)
+			),
+			EXTR_OVERWRITE
 		);
 
 		$api_key = trim( $api_key );
@@ -87,7 +88,7 @@ class Raisenow_Community_Frontend {
 			}
 		}
 
-		$language = trim( strtolower( $language ) );
+		$language = strtolower( trim( $language ) );
 		if ( ! in_array( $language, $languages ) ) {
 			$id = get_the_ID();
 			if ( current_user_can( 'edit_posts', $id ) || current_user_can( 'edit_pages', $id ) ) {
