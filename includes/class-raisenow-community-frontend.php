@@ -208,6 +208,7 @@ if (window.rnw && window.rnw.tamaro) {
 	       "then": [{$recurring_amounts_strings['yearly']}],
 	    },
 	  ],
+	  defaultAmount: {$one_time[2]},
 	});
 }
 EOJS;
