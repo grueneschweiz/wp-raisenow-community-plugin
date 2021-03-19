@@ -1,9 +1,9 @@
 === RaiseNow donation forms ===
-Contributors: cyrillbolliger, phil8900
+Contributors: cyrillbolliger, phil8900, vdrouotmecom
 Tags: donations, raisenow, fundraising
 Requires at least: 4.9
 Tested up to: 5.6.0
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ API-Key.
 Same as any other standard WordPress plugin.
 
 == Changelog ==
+
+= 1.4.1 =
+* French translations. Many thanks to [@vdrouotmecom](https://wordpress.org/support/users/vdrouotmecom/) for contributing them. 
 
 = 1.4.0 =
 * Support to customize amounts with TAMARO widget
