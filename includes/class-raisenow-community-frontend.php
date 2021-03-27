@@ -122,7 +122,7 @@ class Raisenow_Community_Frontend {
 		if ( $widget_type === 'tamaro' ) {
 			return '<div class="' . esc_attr( $class ) . ' ' . esc_attr( $add_class ) . '" style="' . esc_attr( $css ) . '">'
 			       . '<div class="rnw-widget-container"></div>'
-			       . '<script language="javascript" src="https://tamaro.raisenow.com/' . esc_attr( $api_key ) . '/latest/widget.js" type="text/javascript"></script>'
+			       . '<script type="text/javascript" referrerpolicy="no-referrer" src="https://tamaro.raisenow.com/' . esc_attr( $api_key ) . '/latest/widget.js"></script>'
 			       . '<script type="text/javascript">' . $custom_script . '</script>'
 			       . '<script type="text/javascript">' . $this->js_tamaro( $one_time_amounts, $recurring_amounts, $language ) . '</script>'
 			       . '<style type="text/css">' . $custom_css . '</style>'
@@ -130,7 +130,7 @@ class Raisenow_Community_Frontend {
 		} else {
 			return '<div class="' . esc_attr( $class ) . ' ' . esc_attr( $add_class ) . '" style="' . esc_attr( $css ) . '">'
 			       . '<div class="dds-widget-container" data-widget="lema"></div>'
-			       . '<script language="javascript" src="https://widget.raisenow.com/widgets/lema/' . esc_attr( $api_key ) . '/js/dds-init-widget-' . esc_attr( $language ) . '.js" type="text/javascript"></script>'
+			       . '<script type="text/javascript" referrerpolicy="no-referrer" src="https://widget.raisenow.com/widgets/lema/' . esc_attr( $api_key ) . '/js/dds-init-widget-' . esc_attr( $language ) . '.js"></script>'
 			       . '<script type="text/javascript">' . $custom_script . '</script>'
 			       . '<script type="text/javascript">' . $this->amounts_js_lema( $one_time_amounts, $recurring_amounts ) . '</script>'
 			       . '<style type="text/css">' . $custom_css . '</style>'
