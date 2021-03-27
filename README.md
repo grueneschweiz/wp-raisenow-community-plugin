@@ -3,7 +3,7 @@
 **Tags:** donations, raisenow, fundraising  
 **Requires at least:** 4.9  
 **Tested up to:** 5.6.0  
-**Stable tag:** 1.4.1  
+**Stable tag:** 1.4.2  
 **License:** GPLv2 or later    
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -27,6 +27,9 @@ Once you've got the contract signed, [RaiseNow](https://raisenow.com/) will prov
 Same as any other standard WordPress plugin.
 
 ## Changelog ##
+
+### 1.4.2 ###
+* Fix form language for tamaro widget. Props to [@vdrouotmecom](https://wordpress.org/support/users/vdrouotmecom/) for reporting the bug.
 
 ### 1.4.1 ###
 * French translations. Many thanks to [@vdrouotmecom](https://wordpress.org/support/users/vdrouotmecom/) for contributing them.
