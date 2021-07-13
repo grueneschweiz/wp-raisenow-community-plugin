@@ -7,7 +7,7 @@
  * Author URI:      https://github.com/cyrillbolliger
  * Text Domain:     raisenow-community
  * Domain Path:     /languages
- * Version:         1.4.2
+ * Version:         1.5.0
  *
  * @package         Raisenow_Community
  */
@@ -25,7 +25,7 @@ define( 'RAISENOW_COMMUNITY_PATH', __DIR__ );
 /**
  * version number (don't forget to change it also in the header)
  */
-define( 'RAISENOW_COMMUNITY_VERSION', '1.4.2' );
+define( 'RAISENOW_COMMUNITY_VERSION', '1.5.0' );
 
 /**
  * plugin prefix
