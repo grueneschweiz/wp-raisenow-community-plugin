@@ -1,9 +1,9 @@
 # RaiseNow donation forms #
-**Contributors:** [cyrillbolliger](https://profiles.wordpress.org/cyrillbolliger), [phil8900](https://github.com/phil8900/), [vdrouotmecom](https://wordpress.org/support/users/vdrouotmecom/)   
+**Contributors:** [cyrillbolliger](https://profiles.wordpress.org/cyrillbolliger), [phil8900](https://github.com/phil8900/), [vdrouotmecom](https://profiles.wordpress.org/vdrouotmecom/)   
 **Tags:** donations, raisenow, fundraising  
 **Requires at least:** 4.9  
 **Tested up to:** 5.6.0  
-**Stable tag:** 1.4.2  
+**Stable tag:** 1.5.0
 **License:** GPLv2 or later    
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -12,15 +12,24 @@ Add configurable RaiseNow donation forms using shortcode.
 
 ## Description ##
 
-Integrating the LEMA or TAMARO widget from [RaiseNow](https://raisenow.com/) could not be easier: Just install this plugin,
-edit the page where you want the donation form to appear, click the **Insert donation form** button and enter the
-API-key provided from RaiseNow. That's it!
+Integrating the LEMA or TAMARO widget from [RaiseNow](https://raisenow.com/)
+could not be easier:
+1) Install this plugin
+1) Enter the API-key provided from RaiseNow in WordPress under `Settings` >
+   `Online donations`
+1) Edit the page where you want the donation form to appear, click the **Insert
+   donation form** button and enter the amounts of your desire. That's it!
 
-You may want to **configure** the widgets style or inject some custom javascript? Just head over to the settings panel,
-the options page is waiting for you.
+You may leave amount fields blank to reduce the number of choices.
 
-**IMPORTANT:** You'll need to get a contract with [RaiseNow](https://raisenow.com/), before you can use this plugin.
-Once you've got the contract signed, [RaiseNow](https://raisenow.com/) will provide you your API-Key.
+Do you want to **configure** the widgets style or inject some custom
+javascript? Just head over to the settings panel, the options page is waiting
+for you.
+
+**IMPORTANT:** You'll need to get a contract with
+[RaiseNow](https://raisenow.com/), before you can use this plugin. Once you've
+got the contract signed, [RaiseNow](https://raisenow.com/) will provide you your
+API-Key.
 
 ## Installation ##
 
@@ -28,11 +37,14 @@ Same as any other standard WordPress plugin.
 
 ## Changelog ##
 
+### 1.5.0 ###
+* Allow variable number of amount fields.
+
 ### 1.4.2 ###
-* Fix form language for tamaro widget. Props to [@vdrouotmecom](https://wordpress.org/support/users/vdrouotmecom/) for reporting the bug.
+* Fix form language for tamaro widget. Props to [@vdrouotmecom](https://profiles.wordpress.org/vdrouotmecom/) for reporting the bug.
 
 ### 1.4.1 ###
-* French translations. Many thanks to [@vdrouotmecom](https://wordpress.org/support/users/vdrouotmecom/) for contributing them.
+* French translations. Many thanks to [@vdrouotmecom](https://profiles.wordpress.org/vdrouotmecom/) for contributing them.
 
 ### 1.4.0 ###
 * Support to customize amounts with TAMARO widget

@@ -3,7 +3,7 @@ Contributors: cyrillbolliger, phil8900, vdrouotmecom
 Tags: donations, raisenow, fundraising
 Requires at least: 4.9
 Tested up to: 5.6.0
-Stable tag: 1.4.2
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,11 +13,16 @@ IMPORTANT: You need to have a contract with RaiseNow.
 == Description ==
 
 Integrating the LEMA or TAMARO widget from [RaiseNow](https://raisenow.com/)
-could not be easier: Just install this plugin, edit the page where you want the
-donation form to appear, click the **Insert donation form** button and enter the
-API-key provided from RaiseNow. That's it!
+could not be easier:
+1) Install this plugin
+1) Enter the API-key provided from RaiseNow in WordPress under `Settings` >
+   `Online donations`
+1) Edit the page where you want the donation form to appear, click the **Insert
+   donation form** button and enter the amounts of your desire. That's it!
 
-You may want to **configure** the widgets style or inject some custom
+You may leave amount fields blank to reduce the number of choices.
+
+Do you want to **configure** the widgets style or inject some custom
 javascript? Just head over to the settings panel, the options page is waiting
 for you.
 
@@ -31,6 +36,9 @@ API-Key.
 Same as any other standard WordPress plugin.
 
 == Changelog ==
+
+= 1.5.0 =
+* Allow variable number of amount fields.
 
 = 1.4.2 =
 * Fix form language for tamaro widget. Props to [@vdrouotmecom](https://wordpress.org/support/users/vdrouotmecom/) for reporting the bug.
