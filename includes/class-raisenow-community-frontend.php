@@ -126,13 +126,16 @@ class Raisenow_Community_Frontend {
 	 * @return string
 	 */
 	private function amounts_js_lema( $one_time, $recurring ) {
+		$one_time_default = count($one_time) >= 2 ? $one_time[1] : $one_time[0];
+		$recurring_default = count($recurring) >= 2 ? $recurring[1] : $recurring[0];
+
 		return 'window.rnwWidget = window.rnwWidget || {};'
 		       . 'window.rnwWidget.configureWidget = window.rnwWidget.configureWidget || [];'
 		       . 'window.rnwWidget.configureWidget.push(function(options) {'
 		       . 'options.translations.step_amount.onetime_amounts = ' . $this->get_lema_amounts_json( $one_time ) . ';'
 		       . 'options.translations.step_amount.recurring_amounts = ' . $this->get_lema_amounts_json( $recurring ) . ';'
-		       . "options.defaults['ui_onetime_amount_default'] = " . (int) $one_time[2] * 100 . ';'
-		       . "options.defaults['ui_recurring_amount_default'] = " . (int) $recurring[2] * 100 . ';'
+		       . "options.defaults['ui_onetime_amount_default'] = " . (int) $one_time_default * 100 . ';'
+		       . "options.defaults['ui_recurring_amount_default'] = " . (int) $recurring_default * 100 . ';'
 		       . '});';
 	}
 
@@ -148,6 +151,8 @@ class Raisenow_Community_Frontend {
 	private function js_tamaro( $one_time, $recurring, $language ) {
 		$one_time_amounts_string   = implode( ',', $one_time );
 		$recurring_amounts_strings = $this->get_tamaro_recurring_amounts( $recurring );
+
+		$default = count($one_time) >= 2 ? $one_time[1] : $one_time[0];
 
 		return <<<EOJS
 if (window.rnw && window.rnw.tamaro) {
@@ -174,7 +179,7 @@ if (window.rnw && window.rnw.tamaro) {
 	       "then": [{$recurring_amounts_strings['yearly']}],
 	    },
 	  ],
-	  defaultAmount: {$one_time[2]},
+	  defaultAmount: {$default},
 	  language: '$language'
 	});
 }
