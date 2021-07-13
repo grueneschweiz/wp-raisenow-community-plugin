@@ -21,29 +21,6 @@ class Raisenow_Community_Frontend {
 		$languages = [ 'de', 'fr', 'en' ];
 		$options   = get_option( RAISENOW_COMMUNITY_PREFIX . '_donation_options' );
 
-		/**
-		 * Filters the default amounts for new forms and for legacy forms that
-		 * do not have a defined amount yet.
-		 *
-		 * @param array The default amounts
-		 *
-		 * @since 1.2.0
-		 *
-		 */
-		$default_amounts = apply_filters(
-			RAISENOW_COMMUNITY_PREFIX . '_default_amounts',
-			array(
-				'one_time_1'  => '10',
-				'one_time_2'  => '20',
-				'one_time_3'  => '50',
-				'one_time_4'  => '100',
-				'recurring_1' => '5',
-				'recurring_2' => '10',
-				'recurring_3' => '30',
-				'recurring_4' => '100',
-			)
-		);
-
 		$defaults = array(
 			'api_key'   => $options['api_key'],
 			'language'  => '',
@@ -54,7 +31,7 @@ class Raisenow_Community_Frontend {
 
 		extract(
 			shortcode_atts(
-				$defaults + $default_amounts,
+				$defaults,
 				$atts
 			),
 			EXTR_OVERWRITE
@@ -101,19 +78,8 @@ class Raisenow_Community_Frontend {
 			}
 		}
 
-		$one_time_amounts = [
-			1 => $one_time_1,
-			2 => $one_time_2,
-			3 => $one_time_3,
-			4 => $one_time_4
-		];
-
-		$recurring_amounts = [
-			1 => $recurring_1,
-			2 => $recurring_2,
-			3 => $recurring_3,
-			4 => $recurring_4
-		];
+		$one_time_amounts  = $this->get_amounts( 'one_time', $atts );
+		$recurring_amounts = $this->get_amounts( 'recurring', $atts );
 
 		$custom_css    = $options['css'];
 		$custom_script = $options['javascript'];
@@ -289,5 +255,61 @@ EOJS;
 		);
 
 		return compact('monthly', 'quarterly', 'semestral', 'yearly' );
+	}
+
+	/**
+	 * Get the amounts from the shortcode $atts or set default amounts if none
+	 * are given.
+	 *
+	 * @param string $type the amount type. allowed types: 'one_time', 'recurring'
+	 * @param array $atts the shortcode attributes as provided by the add_shortcode function
+	 *
+	 * @return array
+	 */
+	private function get_amounts( $type, $atts ) {
+		$amounts = array();
+
+		for ( $i = 0; $i <= 10; $i ++ ) {
+			$key = "${type}_${i}";
+			if ( array_key_exists( $key, $atts )
+			     && ! empty( $atts[ $key ] ) ) {
+				$amounts[] = $atts[ $key ];
+			}
+		}
+
+		if ( empty( $amounts ) ) {
+			/**
+			 * Filters the default amounts for new forms and for legacy forms that
+			 * do not have a defined amount yet.
+			 *
+			 * @param array The default amounts
+			 *
+			 * @since 1.2.0
+			 *
+			 */
+			$default_amounts = apply_filters(
+				RAISENOW_COMMUNITY_PREFIX . '_default_amounts',
+				array(
+					'one_time_1'  => '10',
+					'one_time_2'  => '20',
+					'one_time_3'  => '50',
+					'one_time_4'  => '100',
+					'recurring_1' => '5',
+					'recurring_2' => '10',
+					'recurring_3' => '30',
+					'recurring_4' => '100',
+				)
+			);
+
+			for ( $i = 0; $i <= 10; $i ++ ) {
+				$key = "${type}_${i}";
+				if ( array_key_exists( $key, $default_amounts )
+				     && ! empty( $default_amounts[ $key ] ) ) {
+					$amounts[] = $default_amounts[ $key ];
+				}
+			}
+		}
+
+		return $amounts;
 	}
 }
