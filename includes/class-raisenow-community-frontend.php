@@ -146,8 +146,8 @@ class Raisenow_Community_Frontend {
 	 * @return string
 	 */
 	private function js_tamaro( $one_time, $recurring, $language ) {
-		$one_time_amounts_string = implode( ',', $one_time);
-		$recurring_amounts_strings = $this->get_tamaro_recurring_amounts($recurring);
+		$one_time_amounts_string   = implode( ',', $one_time );
+		$recurring_amounts_strings = $this->get_tamaro_recurring_amounts( $recurring );
 
 		return <<<EOJS
 if (window.rnw && window.rnw.tamaro) {
@@ -254,7 +254,7 @@ EOJS;
 				$amounts )
 		);
 
-		return compact('monthly', 'quarterly', 'semestral', 'yearly' );
+		return compact( 'monthly', 'quarterly', 'semestral', 'yearly' );
 	}
 
 	/**
