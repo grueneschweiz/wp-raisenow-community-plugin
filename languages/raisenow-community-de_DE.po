@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: RaiseNow donation forms\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
 "community\n"
-"POT-Creation-Date: 2020-12-14 11:29+0100\n"
-"PO-Revision-Date: 2020-12-14 11:31+0100\n"
+"POT-Creation-Date: 2021-10-18 12:09+0200\n"
+"PO-Revision-Date: 2021-10-18 12:10+0200\n"
 "Last-Translator: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language-Team: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 1.8.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -205,29 +205,79 @@ msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 "Du hast nicht die erforderlichen Rechte, um auf diese Seite zuzugreifen."
 
-#. Plugin Name of the plugin/theme
-msgid "RaiseNow donation forms"
-msgstr "RaiseNow Spendenformulare"
+msgid "Widget language"
+msgstr "Widget-Sprache"
 
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
-msgstr "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
+msgid "Select your widget language."
+msgstr "Wählen Sie Ihre Widget-Sprache aus."
 
-#. Description of the plugin/theme
-msgid ""
-"Add RaiseNow donation forms by shortcode. IMPORTANT: You need to have a "
-"contract with https://www.raisenow.com/en to use this plugin."
-msgstr ""
-"Bette Spendenformulare von RaiseNow per Shortcode ein. WICHTIG: Du brauchst "
-"einen Vertrag mit https://www.raisenow.com um dieses Plugin nutzen zu können."
+msgid "Enter the first value for one time donations."
+msgstr "Geben Sie den ersten Wert für einmalige Spenden ein."
 
-#. Author of the plugin/theme
-msgid "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
-msgstr "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
+msgid "One time donation value 1"
+msgstr "Einmaliger Spendenwert 1"
 
-#. Author URI of the plugin/theme
-msgid "https://github.com/cyrillbolliger"
-msgstr "https://github.com/cyrillbolliger"
+msgid "Enter the second value for one time donations."
+msgstr "Geben Sie den zweiten Wert für einmalige Spenden ein."
+
+msgid "One time donation value 2"
+msgstr "Einmaliger Spendenwert 2"
+
+msgid "Enter the third value for one time donations."
+msgstr "Geben Sie den dritten Wert für einmalige Spenden ein."
+
+msgid "One time donation value 3"
+msgstr "Einmaliger Spendenwert 3"
+
+msgid "Enter the fourth value for one time donations."
+msgstr "Geben Sie den vierten Wert für einmalige Spenden ein."
+
+msgid "One time donation value 4"
+msgstr "Einmaliger Spendenwert 4"
+
+msgid "Enter the first value for recurring donations."
+msgstr "Geben Sie den ersten Wert für wiederkehrende Spenden ein."
+
+msgid "Recurring donation value 1"
+msgstr "Wiederkehrender Spendenwert 1"
+
+msgid "Enter the second value for recurring donations."
+msgstr "Geben Sie den zweiten Wert für wiederkehrende Spenden ein."
+
+msgid "Recurring donation value 2"
+msgstr "Wiederkehrender Spendenwert 2"
+
+msgid "Enter the third value for recurring donations."
+msgstr "Geben Sie den dritten Wert für wiederkehrende Spenden ein."
+
+msgid "Recurring donation value 3"
+msgstr "Wiederkehrender Spendenwert 3"
+
+msgid "Enter the fourth value for recurring donations."
+msgstr "Geben Sie den vierten Wert für wiederkehrende Spenden ein."
+
+msgid "Recurring donation value 4"
+msgstr "Wiederkehrender Spendenwert 4"
+
+#~ msgid "RaiseNow donation forms"
+#~ msgstr "RaiseNow Spendenformulare"
+
+#~ msgid "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
+#~ msgstr "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
+
+#~ msgid ""
+#~ "Add RaiseNow donation forms by shortcode. IMPORTANT: You need to have a "
+#~ "contract with https://www.raisenow.com/en to use this plugin."
+#~ msgstr ""
+#~ "Bette Spendenformulare von RaiseNow per Shortcode ein. WICHTIG: Du "
+#~ "brauchst einen Vertrag mit https://www.raisenow.com um dieses Plugin "
+#~ "nutzen zu können."
+
+#~ msgid "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
+#~ msgstr "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
+
+#~ msgid "https://github.com/cyrillbolliger"
+#~ msgstr "https://github.com/cyrillbolliger"
 
 #~ msgid ""
 #~ "Enter your RaiseNow widget type. Can either be lema (default) or tamaro"

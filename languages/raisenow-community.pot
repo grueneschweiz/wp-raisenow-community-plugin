@@ -187,3 +187,57 @@ msgstr ""
 #: raisenow-community.php:144
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
+
+msgid "Widget language"
+msgstr ""
+
+msgid "Select your widget language."
+msgstr ""
+
+msgid "Enter the first value for one time donations."
+msgstr ""
+
+msgid "One time donation value 1"
+msgstr ""
+
+msgid "Enter the second value for one time donations."
+msgstr ""
+
+msgid "One time donation value 2"
+msgstr ""
+
+msgid "Enter the third value for one time donations."
+msgstr ""
+
+msgid "One time donation value 3"
+msgstr ""
+
+msgid "Enter the fourth value for one time donations."
+msgstr ""
+
+msgid "One time donation value 4"
+msgstr ""
+
+msgid "Enter the first value for recurring donations."
+msgstr ""
+
+msgid "Recurring donation value 1"
+msgstr ""
+
+msgid "Enter the second value for recurring donations."
+msgstr ""
+
+msgid "Recurring donation value 2"
+msgstr ""
+
+msgid "Enter the third value for recurring donations."
+msgstr ""
+
+msgid "Recurring donation value 3"
+msgstr ""
+
+msgid "Enter the fourth value for recurring donations."
+msgstr ""
+
+msgid "Recurring donation value 4"
+msgstr ""
