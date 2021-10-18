@@ -33,36 +33,36 @@ define( 'RAISENOW_COMMUNITY_VERSION', '1.5.0' );
 define( 'RAISENOW_COMMUNITY_PREFIX', 'raisenow-community' );
 
 class Raisenow_Community_Main {
-	
+
 	/*
 	 * register needed hooks on startup
 	 */
 	public function __construct() {
 		add_action( 'plugins_loaded', array( &$this, 'i18n' ) );
-		
+
 		if ( is_admin() ) {
 			$this->add_admin();
 		} else {
 			$this->add_frontend();
 		}
 	}
-	
+
 	/**
 	 * register admin hooks
 	 */
 	public function add_admin() {
 		// register for all admin pages
 		add_action( 'admin_menu', array( &$this, 'add_menu' ) );
-		
+
 		// the following hooks are only registered on a contextual basis
 		add_action( 'current_screen', function () {
 			$context = get_current_screen();
-			
+
 			$this->add_short_code_generator( $context );
 			$this->add_options( $context );
 		} );
 	}
-	
+
 	/**
 	 * register hooks for the shortcode generator for posts, pages and all custom post types.
 	 *
@@ -78,15 +78,15 @@ class Raisenow_Community_Main {
 		);
 		if ( $context->post_type && ! in_array( $context->post_type, $excluded_post_types, true ) ) {
 			add_action( 'admin_enqueue_scripts', array( &$this, 'load_resources' ) );
-			
+
 			require_once( RAISENOW_COMMUNITY_PATH . '/includes/class-raisenow-community-admin.php' );
 			$admin = new Raisenow_Community_Admin();
-			
+
 			add_action( 'media_buttons', array( &$admin, 'add_media_button' ), 15 );
 			add_action( 'admin_footer', array( &$admin, 'add_short_code_generator_html' ), 15 );
 		}
 	}
-	
+
 	/**
 	 * register the options if we're on the corresponding option page
 	 *
@@ -98,27 +98,29 @@ class Raisenow_Community_Main {
 				require_once( RAISENOW_COMMUNITY_PATH . '/includes/class-raisenow-community-options.php' );
 				$options = new Raisenow_Community_Options();
 				$options->init();
-				
+
 				add_action( 'admin_enqueue_scripts', array( &$options, 'add_code_editor' ) );
 			}
 		}
 	}
-	
+
 	/**
 	 * register frontend hooks
 	 */
 	public function add_frontend() {
 		add_action( 'init', array( &$this, 'short_code_handler' ) );
 	}
-	
+
 	/**
 	 * hook in the shortcodes
 	 */
 	public function short_code_handler() {
-		require_once( RAISENOW_COMMUNITY_PATH . '/includes/class-raisenow-community-frontend.php' );
+		require_once RAISENOW_COMMUNITY_PATH . '/includes/class-raisenow-community-util.php';
+		require_once RAISENOW_COMMUNITY_PATH . '/includes/class-raisenow-community-options.php';
+		require_once RAISENOW_COMMUNITY_PATH . '/includes/class-raisenow-community-frontend.php';
 		add_shortcode( 'donation_form', array( new Raisenow_Community_Frontend(), 'donation_form' ) );
 	}
-	
+
 	/**
 	 * Add a menu
 	 */
@@ -131,7 +133,7 @@ class Raisenow_Community_Main {
 			[ &$this, 'display_plugin_optionspage' ]
 		);
 	}
-	
+
 	/**
 	 * Menu Callback
 	 */
@@ -139,11 +141,11 @@ class Raisenow_Community_Main {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( __( 'You do not have sufficient permissions to access this page.', RAISENOW_COMMUNITY_PREFIX ) );
 		}
-		
+
 		// Render the settings template
 		include RAISENOW_COMMUNITY_PATH . '/admin/options.php';
 	}
-	
+
 	/**
 	 * I18n.
 	 *
@@ -154,7 +156,7 @@ class Raisenow_Community_Main {
 		$path = dirname( plugin_basename( __FILE__ ) ) . '/languages';
 		load_plugin_textdomain( RAISENOW_COMMUNITY_PREFIX, false, $path );
 	}
-	
+
 	/**
 	 * load ressources (js, css)
 	 */
@@ -173,7 +175,7 @@ class Raisenow_Community_Main {
 			}
 			wp_enqueue_style( $style );
 		}
-		
+
 		// js
 		$script = RAISENOW_COMMUNITY_PREFIX . '-admin-js';
 		if ( ! wp_script_is( $script, 'enqueued' ) ) {
@@ -189,7 +191,7 @@ class Raisenow_Community_Main {
 			wp_enqueue_script( $script );
 		}
 	}
-	
+
 }
 
 // entry point

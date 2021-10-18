@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: RaiseNow donation forms\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
 "community\n"
-"POT-Creation-Date: 2021-10-18 12:09+0200\n"
-"PO-Revision-Date: 2021-10-18 12:10+0200\n"
+"POT-Creation-Date: 2021-10-18 20:38+0200\n"
+"PO-Revision-Date: 2021-10-18 20:42+0200\n"
 "Last-Translator: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language-Team: Cyrill Bolliger <bolliger@gmx.ch>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -55,14 +55,17 @@ msgid "Choose language for the donation form"
 msgstr "Wähle die Sprache des Spendenformulars"
 
 #: admin/short-code-generator.php:21
+#: includes/class-raisenow-community-options.php:333
 msgid "German"
 msgstr "Deutsch"
 
 #: admin/short-code-generator.php:24
+#: includes/class-raisenow-community-options.php:335
 msgid "French"
 msgstr "Französisch"
 
 #: admin/short-code-generator.php:27
+#: includes/class-raisenow-community-options.php:334
 msgid "English"
 msgstr "Englisch"
 
@@ -119,7 +122,7 @@ msgstr "Shortcode einfügen"
 msgid "Insert Donation Form"
 msgstr "Spendenformular einfügen"
 
-#: includes/class-raisenow-community-frontend.php:81
+#: includes/class-raisenow-community-frontend.php:47
 #, php-format
 msgctxt "HTML link tag to the settings page"
 msgid ""
@@ -129,11 +132,11 @@ msgstr ""
 "Spendenformular: Fehlender API-Key. Füge deinen API-Key, den du von RaiseNow "
 "erhalten hast, den %sPlugin-Einstellungen%s hinzu."
 
-#: includes/class-raisenow-community-frontend.php:86
+#: includes/class-raisenow-community-frontend.php:52
 msgid "Donation form: Missing api key. Please contact site administrator."
 msgstr "Spendenformular: Fehlender API-Key. Wende dich an den Administrator."
 
-#: includes/class-raisenow-community-frontend.php:94
+#: includes/class-raisenow-community-frontend.php:60
 #, php-format
 msgid ""
 "Donation form: Unknown language key in shortcode. Accepted values are %1$s. "
@@ -142,142 +145,232 @@ msgstr ""
 "Unbekannter Sprachschlüssel im Shortcode. Akzeptierte Werte sind %1$s. Der "
 "Shortcode muss die folgende Form haben: %2$s"
 
-#: includes/class-raisenow-community-frontend.php:99
+#: includes/class-raisenow-community-frontend.php:65
 msgid ""
 "Donation form: Invalid language setting. Please contact site administrator."
 msgstr ""
 "Spendenformular: Ungültiger Sprachschlüssel. Wenden dich an den "
 "Administrator."
 
-#: includes/class-raisenow-community-options.php:25
-msgid "Customize donation form"
-msgstr "Spendenformular anpassen"
+#: includes/class-raisenow-community-options.php:52
+msgid "Copy shortcode"
+msgstr "Shortcode kopieren"
 
-#: includes/class-raisenow-community-options.php:32
+#: includes/class-raisenow-community-options.php:59
+msgid "Donation form basics"
+msgstr "Grundlegende Einstellungen für das Spendenformular"
+
+#: includes/class-raisenow-community-options.php:66
+msgid "Default Amounts"
+msgstr "Standardbeträge"
+
+#: includes/class-raisenow-community-options.php:73
+msgid "Advanced"
+msgstr "Erweiterte Einstellungen"
+
+#: includes/class-raisenow-community-options.php:80
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: includes/class-raisenow-community-options.php:86
+msgid ""
+"To render the donation form, copy and paste this shortcode on any page, "
+"post, or a text widget."
+msgstr ""
+"Um das Spendenformular anzuzeigen, kannst du diesen Shortcode kopieren und "
+"in eine beliebige Seite, einen Beitrag oder ein Text-Widget einfügen."
+
+#: includes/class-raisenow-community-options.php:92
 msgid "API key"
 msgstr "API-Key"
 
-#: includes/class-raisenow-community-options.php:38
-msgid "Enter your RaiseNow API key."
-msgstr "Gib den RaiseNow API-Key hier ein."
+#: includes/class-raisenow-community-options.php:98
+msgid ""
+"API key retrieved by RaiseNow. You should find it in the onboarding email "
+"from RaiseNow."
+msgstr ""
+"API-Schlüssel von RaiseNow. Du solltest ihn in der Onboarding-E-Mail von "
+"RaiseNow finden."
 
-#: includes/class-raisenow-community-options.php:44
+#: includes/class-raisenow-community-options.php:104
 msgid "Widget type"
 msgstr "Widget-Typ"
 
-#: includes/class-raisenow-community-options.php:50
+#: includes/class-raisenow-community-options.php:110
 msgid ""
-"Select your RaiseNow widget type. Check the onboarding email of RaiseNow to "
-"find out which widget type you should choose."
+"Check the onboarding email from RaiseNow to find out which widget type you "
+"should choose."
 msgstr ""
-"Wähle den RaiseNow Widget-Typ. Schaue in der Onboarding-Email von RaiseNow, "
-"welchen Widget-Typ du wählen solltest."
+"Schaue in der Onboarding-Email von RaiseNow, welchen Widget-Typ du wählen "
+"solltest."
 
-#: includes/class-raisenow-community-options.php:56
+#: includes/class-raisenow-community-options.php:117
+msgid "Widget language"
+msgstr "Widget-Sprache"
+
+#: includes/class-raisenow-community-options.php:123
+msgid "Default widget language."
+msgstr "Standardsprache des Widgets."
+
+#: includes/class-raisenow-community-options.php:129
+msgid "One time donation amount 1"
+msgstr "Betrag Einmalspende 1"
+
+#: includes/class-raisenow-community-options.php:135
+#: includes/class-raisenow-community-options.php:148
+#: includes/class-raisenow-community-options.php:161
+#: includes/class-raisenow-community-options.php:174
+#: includes/class-raisenow-community-options.php:187
+#: includes/class-raisenow-community-options.php:200
+#: includes/class-raisenow-community-options.php:213
+#: includes/class-raisenow-community-options.php:226
+msgid "Default amount. Can be overwritten with the shortcode."
+msgstr "Standardbetrag. Kann mit dem Shortcode überschrieben werden."
+
+#: includes/class-raisenow-community-options.php:142
+msgid "One time donation amount 2"
+msgstr "Betrag Einmalspende 2"
+
+#: includes/class-raisenow-community-options.php:155
+msgid "One time donation amount 3"
+msgstr "Betrag Einmalspende 3"
+
+#: includes/class-raisenow-community-options.php:168
+msgid "One time donation amount 4"
+msgstr "Betrag Einmalspende 4"
+
+#: includes/class-raisenow-community-options.php:181
+msgid "Recurring donation amount 1"
+msgstr "Betrag wiederkehrende Spende 1"
+
+#: includes/class-raisenow-community-options.php:194
+msgid "Recurring donation amount 2"
+msgstr "Betrag wiederkehrende Spende 2"
+
+#: includes/class-raisenow-community-options.php:207
+msgid "Recurring donation amount 3"
+msgstr "Betrag wiederkehrende Spende 3"
+
+#: includes/class-raisenow-community-options.php:220
+msgid "Recurring donation amount 4"
+msgstr "Betrag wiederkehrende Spende 4"
+
+#: includes/class-raisenow-community-options.php:233
 msgid "Custom script"
 msgstr "Benutzerdefiniertes Skript"
 
-#: includes/class-raisenow-community-options.php:62
-msgid "Enter your javascript below. It will be applied to all donation forms."
+#: includes/class-raisenow-community-options.php:239
+msgid "Enter your javascript above. It will be applied to all donation forms."
 msgstr ""
-"Geb dein JavaScript unten ein. Es wird auf alle Spendenformulare angewendet."
+"Geb dein JavaScript oben ein. Es wird auf alle Spendenformulare angewendet."
 
-#: includes/class-raisenow-community-options.php:71
+#: includes/class-raisenow-community-options.php:248
 msgid "Custom css"
 msgstr "Benutzerdefiniertes CSS"
 
-#: includes/class-raisenow-community-options.php:77
-msgid "Enter your custom css below. It will be applied to all donation forms."
+#: includes/class-raisenow-community-options.php:254
+msgid "Enter your custom css above. It will be applied to all donation forms."
 msgstr ""
-"Gib dein benutzerdefiniertes CSS unten ein. Es wird auf alle "
-"Spendenformulare angewendet."
+"Gib dein benutzerdefiniertes CSS oben ein. Es wird auf alle Spendenformulare "
+"angewendet."
 
-#: includes/class-raisenow-community-options.php:86
-msgid "Use the options below to customize your donation form."
-msgstr "Verwende die folgenden Optionen, um dein Spendenformular anzupassen."
+#: includes/class-raisenow-community-options.php:263
+msgid "Copy this shortcode and paste it into your post, page, or text widget:"
+msgstr ""
+"Kopiere diesen Shortcode und füge ihn in deinen Beitrag, Seite oder Text-"
+"Widget ein:"
 
-#: raisenow-community.php:130 raisenow-community.php:131
+#: includes/class-raisenow-community-options.php:268
+msgid ""
+"These settings are mandatory. The form will not work if they are not set up "
+"properly."
+msgstr ""
+"Diese Einstellungen sind zwingend. Das Formular funktioniert nicht, wenn "
+"diese Einstellungen nicht korrekt sind."
+
+#: includes/class-raisenow-community-options.php:272
+msgid ""
+"Define the default donation amounts here. They may be overwritten for "
+"individual forms using the according shortcode attributes."
+msgstr ""
+"Definiere hier die Standardspendenbeträge. Sie können für einzelne Formulare "
+"mit den entsprechenden Shortcode-Attributen überschrieben werden."
+
+#: includes/class-raisenow-community-options.php:276
+msgid ""
+"Styles and scripts added here are injected on every page that contains a "
+"donation form. You probably want to leave this section empty."
+msgstr ""
+"Hier hinzugefügte Stile und Skripte werden auf jeder Seite eingefügt, die "
+"ein Spendenformular enthält. Wahrscheinlich kannst du diesen Abschnitt leer "
+"lassen."
+
+#: raisenow-community.php:129 raisenow-community.php:130
 msgid "Online donations"
 msgstr "Online-Spenden"
 
-#: raisenow-community.php:144
+#: raisenow-community.php:142
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 "Du hast nicht die erforderlichen Rechte, um auf diese Seite zuzugreifen."
 
-msgid "Widget language"
-msgstr "Widget-Sprache"
+#. Plugin Name of the plugin/theme
+msgid "RaiseNow donation forms"
+msgstr "RaiseNow Spendenformulare"
 
-msgid "Select your widget language."
-msgstr "Wählen Sie Ihre Widget-Sprache aus."
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
+msgstr "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
 
-msgid "Enter the first value for one time donations."
-msgstr "Geben Sie den ersten Wert für einmalige Spenden ein."
+#. Description of the plugin/theme
+msgid ""
+"Add RaiseNow donation forms by shortcode. IMPORTANT: You need to have a "
+"contract with https://www.raisenow.com/en to use this plugin."
+msgstr ""
+"Bette Spendenformulare von RaiseNow per Shortcode ein. WICHTIG: Du brauchst "
+"einen Vertrag mit https://www.raisenow.com um dieses Plugin nutzen zu können."
 
-msgid "One time donation value 1"
-msgstr "Einmaliger Spendenwert 1"
+#. Author of the plugin/theme
+msgid "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
+msgstr "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
 
-msgid "Enter the second value for one time donations."
-msgstr "Geben Sie den zweiten Wert für einmalige Spenden ein."
+#. Author URI of the plugin/theme
+msgid "https://github.com/cyrillbolliger"
+msgstr "https://github.com/cyrillbolliger"
 
-msgid "One time donation value 2"
-msgstr "Einmaliger Spendenwert 2"
+#~ msgid "Customize donation form"
+#~ msgstr "Spendenformular anpassen"
 
-msgid "Enter the third value for one time donations."
-msgstr "Geben Sie den dritten Wert für einmalige Spenden ein."
-
-msgid "One time donation value 3"
-msgstr "Einmaliger Spendenwert 3"
-
-msgid "Enter the fourth value for one time donations."
-msgstr "Geben Sie den vierten Wert für einmalige Spenden ein."
-
-msgid "One time donation value 4"
-msgstr "Einmaliger Spendenwert 4"
-
-msgid "Enter the first value for recurring donations."
-msgstr "Geben Sie den ersten Wert für wiederkehrende Spenden ein."
-
-msgid "Recurring donation value 1"
-msgstr "Wiederkehrender Spendenwert 1"
-
-msgid "Enter the second value for recurring donations."
-msgstr "Geben Sie den zweiten Wert für wiederkehrende Spenden ein."
-
-msgid "Recurring donation value 2"
-msgstr "Wiederkehrender Spendenwert 2"
-
-msgid "Enter the third value for recurring donations."
-msgstr "Geben Sie den dritten Wert für wiederkehrende Spenden ein."
-
-msgid "Recurring donation value 3"
-msgstr "Wiederkehrender Spendenwert 3"
-
-msgid "Enter the fourth value for recurring donations."
-msgstr "Geben Sie den vierten Wert für wiederkehrende Spenden ein."
-
-msgid "Recurring donation value 4"
-msgstr "Wiederkehrender Spendenwert 4"
-
-#~ msgid "RaiseNow donation forms"
-#~ msgstr "RaiseNow Spendenformulare"
-
-#~ msgid "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
-#~ msgstr "https://github.com/grueneschweiz/wp-raisenow-community-plugin"
-
-#~ msgid ""
-#~ "Add RaiseNow donation forms by shortcode. IMPORTANT: You need to have a "
-#~ "contract with https://www.raisenow.com/en to use this plugin."
+#~ msgid "Use the options below to customize your donation form."
 #~ msgstr ""
-#~ "Bette Spendenformulare von RaiseNow per Shortcode ein. WICHTIG: Du "
-#~ "brauchst einen Vertrag mit https://www.raisenow.com um dieses Plugin "
-#~ "nutzen zu können."
+#~ "Verwende die folgenden Optionen, um dein Spendenformular anzupassen."
 
-#~ msgid "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
-#~ msgstr "Cyrill Bolliger | GRÜNE Schweiz | Les VERTS suisses"
+#~ msgid "Enter your RaiseNow API key."
+#~ msgstr "Gib den RaiseNow API-Key hier ein."
 
-#~ msgid "https://github.com/cyrillbolliger"
-#~ msgstr "https://github.com/cyrillbolliger"
+#~ msgid "Enter the first value for one time donations."
+#~ msgstr "Geben Sie den ersten Wert für einmalige Spenden ein."
+
+#~ msgid "Enter the second value for one time donations."
+#~ msgstr "Geben Sie den zweiten Wert für einmalige Spenden ein."
+
+#~ msgid "Enter the third value for one time donations."
+#~ msgstr "Geben Sie den dritten Wert für einmalige Spenden ein."
+
+#~ msgid "Enter the fourth value for one time donations."
+#~ msgstr "Geben Sie den vierten Wert für einmalige Spenden ein."
+
+#~ msgid "Enter the first value for recurring donations."
+#~ msgstr "Geben Sie den ersten Wert für wiederkehrende Spenden ein."
+
+#~ msgid "Enter the second value for recurring donations."
+#~ msgstr "Geben Sie den zweiten Wert für wiederkehrende Spenden ein."
+
+#~ msgid "Enter the third value for recurring donations."
+#~ msgstr "Geben Sie den dritten Wert für wiederkehrende Spenden ein."
+
+#~ msgid "Enter the fourth value for recurring donations."
+#~ msgstr "Geben Sie den vierten Wert für wiederkehrende Spenden ein."
 
 #~ msgid ""
 #~ "Enter your RaiseNow widget type. Can either be lema (default) or tamaro"
