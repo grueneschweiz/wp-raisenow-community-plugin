@@ -288,12 +288,12 @@ class Raisenow_Community_Options {
 		             'recurring_3=&quot;' . $this->defaults['recurring_3'] . '&quot; ' .
 		             'recurring_4=&quot;' . $this->defaults['recurring_4'] . '&quot;]';
 
-		$options_id = self::OPTIONS_ID;
+		$name = self::OPTIONS_ID . '[' . $args['option_id'] . ']';
 
 		echo <<<EOT
-<input id="$options_id-{$args['option_id']}" type="text" onfocus="this.select();" readonly="readonly" class="large-text code" value="$shortcode">
+<input id="$name" type="text" onfocus="this.select();" readonly="readonly" class="large-text code" value="$shortcode">
 <p class="description">
-	<label for="$options_id-{$args['option_id']}">{$args['helptext']}</label>
+	<label for="$name">{$args['helptext']}</label>
 </p>
 EOT;
 	}
