@@ -286,7 +286,7 @@ class Raisenow_Community_Options {
 		             'recurring_1=&quot;' . $this->defaults['recurring_1'] . '&quot; ' .
 		             'recurring_2=&quot;' . $this->defaults['recurring_2'] . '&quot; ' .
 		             'recurring_3=&quot;' . $this->defaults['recurring_3'] . '&quot; ' .
-		             'recurring_4=&quot;' . $this->defaults['recurring_4'] . '&quot;]";';
+		             'recurring_4=&quot;' . $this->defaults['recurring_4'] . '&quot;]';
 
 		$options_id = self::OPTIONS_ID;
 
