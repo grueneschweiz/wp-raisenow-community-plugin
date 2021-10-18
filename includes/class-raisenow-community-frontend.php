@@ -19,25 +19,13 @@ class Raisenow_Community_Frontend {
 	 */
 	public function donation_form( $atts ) {
 		$languages = [ 'de', 'fr', 'en' ];
-		$options   = get_option( RAISENOW_COMMUNITY_PREFIX . '_donation_options' );
 
-		$defaults = array(
-			'api_key'   => $options['api_key'],
-			'language'  => '',
-			'css'       => '',
-			'class'     => 'raisenow_community_donation_form',
-			'add_class' => '',
+		$options = shortcode_atts(
+			Raisenow_Community_Util::get_shortcode_atts(),
+			$atts
 		);
 
-		extract(
-			shortcode_atts(
-				$defaults,
-				$atts
-			),
-			EXTR_OVERWRITE
-		);
-
-		$api_key = trim( $api_key );
+		$api_key = trim( $options['api_key'] );
 
 		/**
 		 * Migration function: Add the form api key as global api key
@@ -65,7 +53,7 @@ class Raisenow_Community_Frontend {
 			}
 		}
 
-		$language = strtolower( trim( $language ) );
+		$language = strtolower( trim( $options['widget_language'] ) );
 		if ( ! in_array( $language, $languages ) ) {
 			$id = get_the_ID();
 			if ( current_user_can( 'edit_posts', $id ) || current_user_can( 'edit_pages', $id ) ) {
@@ -83,25 +71,24 @@ class Raisenow_Community_Frontend {
 
 		$custom_css    = $options['css'];
 		$custom_script = $options['javascript'];
-		$widget_type   = $options['widget_type'];
 
-		if ( $widget_type === 'tamaro' ) {
-			return '<div class="' . esc_attr( $class ) . ' ' . esc_attr( $add_class ) . '" style="' . esc_attr( $css ) . '">'
+		if ( $options['widget_type'] === 'tamaro' ) {
+			return '<div class="' . esc_attr( $options['class'] ) . ' ' . esc_attr( $options['add_class'] ) . '">'
 			       . '<div class="rnw-widget-container"></div>'
 			       . '<script type="text/javascript" referrerpolicy="no-referrer" src="https://tamaro.raisenow.com/' . esc_attr( $api_key ) . '/latest/widget.js"></script>'
 			       . '<script type="text/javascript">' . $custom_script . '</script>'
 			       . '<script type="text/javascript">' . $this->js_tamaro( $one_time_amounts, $recurring_amounts, $language ) . '</script>'
-			       . '<style type="text/css">' . $custom_css . '</style>'
-			       . '</div>';
-		} else {
-			return '<div class="' . esc_attr( $class ) . ' ' . esc_attr( $add_class ) . '" style="' . esc_attr( $css ) . '">'
-			       . '<div class="dds-widget-container" data-widget="lema"></div>'
-			       . '<script type="text/javascript" referrerpolicy="no-referrer" src="https://widget.raisenow.com/widgets/lema/' . esc_attr( $api_key ) . '/js/dds-init-widget-' . esc_attr( $language ) . '.js"></script>'
-			       . '<script type="text/javascript">' . $custom_script . '</script>'
-			       . '<script type="text/javascript">' . $this->amounts_js_lema( $one_time_amounts, $recurring_amounts ) . '</script>'
-			       . '<style type="text/css">' . $custom_css . '</style>'
+			       . '<style>' . $custom_css . '</style>'
 			       . '</div>';
 		}
+
+		return '<div class="' . esc_attr( $options['class'] ) . ' ' . esc_attr( $options['add_class'] ) . '">'
+		       . '<div class="dds-widget-container" data-widget="lema"></div>'
+		       . '<script type="text/javascript" referrerpolicy="no-referrer" src="https://widget.raisenow.com/widgets/lema/' . esc_attr( $api_key ) . '/js/dds-init-widget-' . esc_attr( $language ) . '.js"></script>'
+		       . '<script type="text/javascript">' . $custom_script . '</script>'
+		       . '<script type="text/javascript">' . $this->amounts_js_lema( $one_time_amounts, $recurring_amounts ) . '</script>'
+		       . '<style>' . $custom_css . '</style>'
+		       . '</div>';
 	}
 
 	/**
@@ -112,9 +99,9 @@ class Raisenow_Community_Frontend {
 	 * @param $api_key
 	 */
 	private function legacy_add_api_key_to_global_settings( $api_key ) {
-		$options            = get_option( RAISENOW_COMMUNITY_PREFIX . '_donation_options' );
+		$options            = get_option( Raisenow_Community_Options::OPTIONS_ID );
 		$options['api_key'] = $api_key;
-		update_option( RAISENOW_COMMUNITY_PREFIX . '_donation_options', $options );
+		update_option( Raisenow_Community_Options::OPTIONS_ID, $options );
 	}
 
 	/**
@@ -126,8 +113,8 @@ class Raisenow_Community_Frontend {
 	 * @return string
 	 */
 	private function amounts_js_lema( $one_time, $recurring ) {
-		$one_time_default = count($one_time) >= 2 ? $one_time[1] : $one_time[0];
-		$recurring_default = count($recurring) >= 2 ? $recurring[1] : $recurring[0];
+		$one_time_default  = count( $one_time ) >= 2 ? $one_time[1] : $one_time[0];
+		$recurring_default = count( $recurring ) >= 2 ? $recurring[1] : $recurring[0];
 
 		return 'window.rnwWidget = window.rnwWidget || {};'
 		       . 'window.rnwWidget.configureWidget = window.rnwWidget.configureWidget || [];'
@@ -152,7 +139,7 @@ class Raisenow_Community_Frontend {
 		$one_time_amounts_string   = implode( ',', $one_time );
 		$recurring_amounts_strings = $this->get_tamaro_recurring_amounts( $recurring );
 
-		$default = count($one_time) >= 2 ? $one_time[1] : $one_time[0];
+		$default = count( $one_time ) >= 2 ? $one_time[1] : $one_time[0];
 
 		return <<<EOJS
 if (window.rnw && window.rnw.tamaro) {
@@ -279,39 +266,6 @@ EOJS;
 			if ( array_key_exists( $key, $atts )
 			     && ! empty( $atts[ $key ] ) ) {
 				$amounts[] = $atts[ $key ];
-			}
-		}
-
-		if ( empty( $amounts ) ) {
-			/**
-			 * Filters the default amounts for new forms and for legacy forms that
-			 * do not have a defined amount yet.
-			 *
-			 * @param array The default amounts
-			 *
-			 * @since 1.2.0
-			 *
-			 */
-			$default_amounts = apply_filters(
-				RAISENOW_COMMUNITY_PREFIX . '_default_amounts',
-				array(
-					'one_time_1'  => '10',
-					'one_time_2'  => '20',
-					'one_time_3'  => '50',
-					'one_time_4'  => '100',
-					'recurring_1' => '5',
-					'recurring_2' => '10',
-					'recurring_3' => '30',
-					'recurring_4' => '100',
-				)
-			);
-
-			for ( $i = 0; $i <= 10; $i ++ ) {
-				$key = "${type}_${i}";
-				if ( array_key_exists( $key, $default_amounts )
-				     && ! empty( $default_amounts[ $key ] ) ) {
-					$amounts[] = $default_amounts[ $key ];
-				}
 			}
 		}
 

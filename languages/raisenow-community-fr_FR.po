@@ -3,14 +3,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: RaiseNow donation forms 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
-"community\n"
-"POT-Creation-Date: 2020-12-14 11:29+0100\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-community\n"
+"POT-Creation-Date: 2021-10-18 12:11+0200\n"
+"PO-Revision-Date: 2021-10-18 12:15+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-03-19 15:37+0100\n"
-"Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
@@ -18,9 +19,7 @@ msgstr ""
 "esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 2.4.2\n"
-"Last-Translator: \n"
-"Language: fr_FR\n"
+"X-Generator: Poedit 1.8.2\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: admin/configuration-warning.php:4
@@ -32,11 +31,11 @@ msgstr "Vous devez au préalable avoir établie un contrat avec %s."
 #, php-format
 msgctxt "HTML link tag to the settings page"
 msgid ""
-"Missing API key. Add the API key you received from RaiseNow to your %splugin "
-"settings%s."
+"Missing API key. Add the API key you received from RaiseNow to your %splugin settings"
+"%s."
 msgstr ""
-"La clé API est manquante. Indiquez dans les %sréglages du plugin%s votre clé "
-"API que RaiseNow vous a communiqué."
+"La clé API est manquante. Indiquez dans les %sréglages du plugin%s votre clé API que "
+"RaiseNow vous a communiqué."
 
 #: admin/configuration-warning.php:19
 msgid "Missing api key. Please contact site administrator."
@@ -76,11 +75,10 @@ msgstr "Don instantané"
 
 #: admin/short-code-generator.php:34
 msgid ""
-"Set the predefined amounts for one time donations in CHF. Field 2 will be "
-"preselected."
+"Set the predefined amounts for one time donations in CHF. Field 2 will be preselected."
 msgstr ""
-"Indiquez les montants prédéfinis pour les dons instantanés en francs suisses "
-"CHF. Le champ 2 sera présélectionné."
+"Indiquez les montants prédéfinis pour les dons instantanés en francs suisses CHF. Le "
+"champ 2 sera présélectionné."
 
 #: admin/short-code-generator.php:37 admin/short-code-generator.php:83
 msgid "Field 1"
@@ -104,11 +102,10 @@ msgstr "Dons récurrents"
 
 #: admin/short-code-generator.php:80
 msgid ""
-"Set the predefined amounts for recurring donations in CHF. Field 2 will be "
-"preselected."
+"Set the predefined amounts for recurring donations in CHF. Field 2 will be preselected."
 msgstr ""
-"Indiquez les montants prédéfinis pour les dons en francs suisses CHF. Le "
-"champ 2 sera présélectionné."
+"Indiquez les montants prédéfinis pour les dons en francs suisses CHF. Le champ 2 sera "
+"présélectionné."
 
 #: admin/short-code-generator.php:128
 msgid "Insert shortcode"
@@ -123,33 +120,32 @@ msgstr "Insérer le formulaire de don"
 #, php-format
 msgctxt "HTML link tag to the settings page"
 msgid ""
-"Donation form: Missing api key. Add the API key you received from RaiseNow "
-"to your %splugin settings%s."
+"Donation form: Missing api key. Add the API key you received from RaiseNow to your "
+"%splugin settings%s."
 msgstr ""
-"Formulaire de don : Clé API manquante. Ajoutez votre clé API que RaiseNow "
-"vous a envoyé dans les %sréglages de votre plugin%s."
+"Formulaire de don : Clé API manquante. Ajoutez votre clé API que RaiseNow vous a "
+"envoyé dans les %sréglages de votre plugin%s."
 
 #: includes/class-raisenow-community-frontend.php:86
 msgid "Donation form: Missing api key. Please contact site administrator."
 msgstr ""
-"Formulaire de don : Votre clé API est manquante. Contactez l’administrateur "
-"de votre site."
+"Formulaire de don : Votre clé API est manquante. Contactez l’administrateur de votre "
+"site."
 
 #: includes/class-raisenow-community-frontend.php:94
 #, php-format
 msgid ""
-"Donation form: Unknown language key in shortcode. Accepted values are %1$s. "
-"Shortcode must have the form: %2$s"
+"Donation form: Unknown language key in shortcode. Accepted values are %1$s. Shortcode "
+"must have the form: %2$s"
 msgstr ""
-"Formulaire de don : Langue inconnue dans le shortcode. Les valeurs acceptées "
-"sont %1$s. Le shortcode doit avoir la forme suivante : %2$s"
+"Formulaire de don : Langue inconnue dans le shortcode. Les valeurs acceptées sont "
+"%1$s. Le shortcode doit avoir la forme suivante : %2$s"
 
 #: includes/class-raisenow-community-frontend.php:99
-msgid ""
-"Donation form: Invalid language setting. Please contact site administrator."
+msgid "Donation form: Invalid language setting. Please contact site administrator."
 msgstr ""
-"Formulaire de don : La réglage de la langue sont invalides. Contactez "
-"l’administrateur de votre site."
+"Formulaire de don : La réglage de la langue sont invalides. Contactez l’administrateur "
+"de votre site."
 
 #: includes/class-raisenow-community-options.php:25
 msgid "Customize donation form"
@@ -169,12 +165,12 @@ msgstr "Type de Widget"
 
 #: includes/class-raisenow-community-options.php:50
 msgid ""
-"Select your RaiseNow widget type. Check the onboarding email of RaiseNow to "
-"find out which widget type you should choose."
+"Select your RaiseNow widget type. Check the onboarding email of RaiseNow to find out "
+"which widget type you should choose."
 msgstr ""
-"Sélectionnez votre type de Widget. Vérifiez dans l’email d’introduction que "
-"vous avez reçu de la part de RaiseNow pour connaitre quel est le bon type de "
-"Widget vous pouvez choisir."
+"Sélectionnez votre type de Widget. Vérifiez dans l’email d’introduction que vous avez "
+"reçu de la part de RaiseNow pour connaitre quel est le bon type de Widget vous pouvez "
+"choisir."
 
 #: includes/class-raisenow-community-options.php:56
 msgid "Custom script"
@@ -183,8 +179,8 @@ msgstr "Code JavaScript personnalisé"
 #: includes/class-raisenow-community-options.php:62
 msgid "Enter your javascript below. It will be applied to all donation forms."
 msgstr ""
-"Insérez votre code JavaScript ci-dessous. Il sera appliqué à tous les "
-"formulaires de don."
+"Insérez votre code JavaScript ci-dessous. Il sera appliqué à tous les formulaires de "
+"don."
 
 #: includes/class-raisenow-community-options.php:71
 msgid "Custom css"
@@ -193,14 +189,11 @@ msgstr "Code CSS personnalisé"
 #: includes/class-raisenow-community-options.php:77
 msgid "Enter your custom css below. It will be applied to all donation forms."
 msgstr ""
-"Insérez votre code CSS ci-dessous. Il sera appliqué à tous les formulaires "
-"de don."
+"Insérez votre code CSS ci-dessous. Il sera appliqué à tous les formulaires de don."
 
 #: includes/class-raisenow-community-options.php:86
 msgid "Use the options below to customize your donation form."
-msgstr ""
-"Utilisez les options ci-dessous afin de personnaliser votre formulaire de "
-"don."
+msgstr "Utilisez les options ci-dessous afin de personnaliser votre formulaire de don."
 
 #: raisenow-community.php:130 raisenow-community.php:131
 msgid "Online donations"
@@ -209,3 +202,57 @@ msgstr "Don en ligne"
 #: raisenow-community.php:144
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Vous n’avez pas les droits nécessaires pour visualiser cette page."
+
+msgid "Widget language"
+msgstr "Langue De Widget"
+
+msgid "Select your widget language."
+msgstr "Sélectionnez la langue de votre widget."
+
+msgid "Enter the first value for one time donations."
+msgstr "Entrez la première valeur pour les dons uniques."
+
+msgid "One time donation value 1"
+msgstr "Don unique valeur 1"
+
+msgid "Enter the second value for one time donations."
+msgstr "Entrez la deuxième valeur pour les dons uniques."
+
+msgid "One time donation value 2"
+msgstr "Don unique valeur 2"
+
+msgid "Enter the third value for one time donations."
+msgstr "Entrez la troisième valeur pour les dons uniques."
+
+msgid "One time donation value 3"
+msgstr "Don unique valeur 3"
+
+msgid "Enter the fourth value for one time donations."
+msgstr "Entrez la quatrième valeur pour les dons uniques."
+
+msgid "One time donation value 4"
+msgstr "Don unique valeur 4"
+
+msgid "Enter the first value for recurring donations."
+msgstr "Entrez la première valeur pour les dons récurrents."
+
+msgid "Recurring donation value 1"
+msgstr "Don récurrent valeur 1"
+
+msgid "Enter the second value for recurring donations."
+msgstr "Entrez la deuxième valeur pour les dons récurrents."
+
+msgid "Recurring donation value 2"
+msgstr "Don récurrent valeur 2"
+
+msgid "Enter the third value for recurring donations."
+msgstr "Entrez la troisième valeur pour les dons récurrents."
+
+msgid "Recurring donation value 3"
+msgstr "Don récurrent valeur 3"
+
+msgid "Enter the fourth value for recurring donations."
+msgstr "Entrez la quatrième valeur pour les dons récurrents."
+
+msgid "Recurring donation value 4"
+msgstr ""

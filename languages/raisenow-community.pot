@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: RaiseNow donation forms 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/raisenow-"
 "community\n"
-"POT-Creation-Date: 2020-12-14 11:29+0100\n"
+"POT-Creation-Date: 2021-10-18 20:38+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +21,7 @@ msgstr ""
 "esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: admin/configuration-warning.php:4
@@ -54,14 +54,17 @@ msgid "Choose language for the donation form"
 msgstr ""
 
 #: admin/short-code-generator.php:21
+#: includes/class-raisenow-community-options.php:333
 msgid "German"
 msgstr ""
 
 #: admin/short-code-generator.php:24
+#: includes/class-raisenow-community-options.php:335
 msgid "French"
 msgstr ""
 
 #: admin/short-code-generator.php:27
+#: includes/class-raisenow-community-options.php:334
 msgid "English"
 msgstr ""
 
@@ -114,7 +117,7 @@ msgstr ""
 msgid "Insert Donation Form"
 msgstr ""
 
-#: includes/class-raisenow-community-frontend.php:81
+#: includes/class-raisenow-community-frontend.php:47
 #, php-format
 msgctxt "HTML link tag to the settings page"
 msgid ""
@@ -122,68 +125,161 @@ msgid ""
 "to your %splugin settings%s."
 msgstr ""
 
-#: includes/class-raisenow-community-frontend.php:86
+#: includes/class-raisenow-community-frontend.php:52
 msgid "Donation form: Missing api key. Please contact site administrator."
 msgstr ""
 
-#: includes/class-raisenow-community-frontend.php:94
+#: includes/class-raisenow-community-frontend.php:60
 #, php-format
 msgid ""
 "Donation form: Unknown language key in shortcode. Accepted values are %1$s. "
 "Shortcode must have the form: %2$s"
 msgstr ""
 
-#: includes/class-raisenow-community-frontend.php:99
+#: includes/class-raisenow-community-frontend.php:65
 msgid ""
 "Donation form: Invalid language setting. Please contact site administrator."
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:25
-msgid "Customize donation form"
+#: includes/class-raisenow-community-options.php:52
+msgid "Copy shortcode"
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:32
-msgid "API key"
+#: includes/class-raisenow-community-options.php:59
+msgid "Donation form basics"
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:38
-msgid "Enter your RaiseNow API key."
+#: includes/class-raisenow-community-options.php:66
+msgid "Default Amounts"
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:44
-msgid "Widget type"
+#: includes/class-raisenow-community-options.php:73
+msgid "Advanced"
 msgstr ""
 
-#: includes/class-raisenow-community-options.php:50
-msgid ""
-"Select your RaiseNow widget type. Check the onboarding email of RaiseNow to "
-"find out which widget type you should choose."
-msgstr ""
-
-#: includes/class-raisenow-community-options.php:56
-msgid "Custom script"
-msgstr ""
-
-#: includes/class-raisenow-community-options.php:62
-msgid "Enter your javascript below. It will be applied to all donation forms."
-msgstr ""
-
-#: includes/class-raisenow-community-options.php:71
-msgid "Custom css"
-msgstr ""
-
-#: includes/class-raisenow-community-options.php:77
-msgid "Enter your custom css below. It will be applied to all donation forms."
+#: includes/class-raisenow-community-options.php:80
+msgid "Shortcode"
 msgstr ""
 
 #: includes/class-raisenow-community-options.php:86
-msgid "Use the options below to customize your donation form."
+msgid ""
+"To render the donation form, copy and paste this shortcode on any page, "
+"post, or a text widget."
 msgstr ""
 
-#: raisenow-community.php:130 raisenow-community.php:131
+#: includes/class-raisenow-community-options.php:92
+msgid "API key"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:98
+msgid ""
+"API key retrieved by RaiseNow. You should find it in the onboarding email "
+"from RaiseNow."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:104
+msgid "Widget type"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:110
+msgid ""
+"Check the onboarding email from RaiseNow to find out which widget type you "
+"should choose."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:117
+msgid "Widget language"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:123
+msgid "Default widget language."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:129
+msgid "One time donation amount 1"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:135
+#: includes/class-raisenow-community-options.php:148
+#: includes/class-raisenow-community-options.php:161
+#: includes/class-raisenow-community-options.php:174
+#: includes/class-raisenow-community-options.php:187
+#: includes/class-raisenow-community-options.php:200
+#: includes/class-raisenow-community-options.php:213
+#: includes/class-raisenow-community-options.php:226
+msgid "Default amount. Can be overwritten with the shortcode."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:142
+msgid "One time donation amount 2"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:155
+msgid "One time donation amount 3"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:168
+msgid "One time donation amount 4"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:181
+msgid "Recurring donation amount 1"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:194
+msgid "Recurring donation amount 2"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:207
+msgid "Recurring donation amount 3"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:220
+msgid "Recurring donation amount 4"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:233
+msgid "Custom script"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:239
+msgid "Enter your javascript above. It will be applied to all donation forms."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:248
+msgid "Custom css"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:254
+msgid "Enter your custom css above. It will be applied to all donation forms."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:263
+msgid "Copy this shortcode and paste it into your post, page, or text widget:"
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:268
+msgid ""
+"These settings are mandatory. The form will not work if they are not set up "
+"properly."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:272
+msgid ""
+"Define the default donation amounts here. They may be overwritten for "
+"individual forms using the according shortcode attributes."
+msgstr ""
+
+#: includes/class-raisenow-community-options.php:276
+msgid ""
+"Styles and scripts added here are injected on every page that contains a "
+"donation form. You probably want to leave this section empty."
+msgstr ""
+
+#: raisenow-community.php:129 raisenow-community.php:130
 msgid "Online donations"
 msgstr ""
 
-#: raisenow-community.php:144
+#: raisenow-community.php:142
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
