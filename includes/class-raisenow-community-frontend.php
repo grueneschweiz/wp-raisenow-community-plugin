@@ -25,6 +25,17 @@ class Raisenow_Community_Frontend {
 			$atts
 		);
 
+		/**
+		 * As we use the key 'language' in the shortcode and 'widget_language' in the settings,
+		 * we have to add the value from the shortcode manually to $options.
+		 */
+		if ( ! empty( $atts['language'] ) ) {
+			$lang = strtolower( trim( $atts['language'] ) );
+			if ( Raisenow_Community_Util::is_valid_language( $lang ) ) {
+				$options['widget_language'] = $atts['language'];
+			}
+		}
+
 		$api_key = trim( $options['api_key'] );
 
 		/**
