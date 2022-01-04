@@ -6,7 +6,7 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 class Raisenow_Community_Util {
-	const WIDGET_LANGUAGES = [ 'de', 'fr', 'en' ];
+	const WIDGET_LANGUAGES = [ 'de', 'fr', 'en', 'it' ];
 
 	public static function get_shortcode_atts() {
 		$shortcode_defaults = self::get_shortcode_defaults();

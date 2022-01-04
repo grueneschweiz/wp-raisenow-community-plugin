@@ -329,10 +329,12 @@ EOT;
 		$de = checked( 'de', $this->defaults[ $args['option_id'] ], false );
 		$en = checked( 'en', $this->defaults[ $args['option_id'] ], false );
 		$fr = checked( 'fr', $this->defaults[ $args['option_id'] ], false );
+		$it = checked( 'it', $this->defaults[ $args['option_id'] ], false );
 
 		$de_description = __( 'German' );
 		$en_description = __( 'English' );
 		$fr_description = __( 'French' );
+		$it_description = __( 'Italian' );
 
 		$name = self::OPTIONS_ID . '[' . $args['option_id'] . ']';
 
@@ -344,7 +346,9 @@ EOT;
 	<input type="radio" value="en" name="$name" id="$name-en"$en>
 	<label for="$name-en">$en_description</label><br>
 	<input type="radio" value="fr" name="$name" id="$name-fr"$fr>
-	<label for="$name-fr">$fr_description</label>
+	<label for="$name-fr">$fr_description</label><br>
+	<input type="radio" value="it" name="$name" id="$name-it"$it>
+	<label for="$name-it">$it_description</label>
 </fieldset>
 EOT;
 	}

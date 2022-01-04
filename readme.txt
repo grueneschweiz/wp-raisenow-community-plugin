@@ -3,7 +3,7 @@ Contributors: cyrillbolliger, phil8900, vdrouotmecom
 Tags: donations, raisenow, fundraising
 Requires at least: 4.9
 Tested up to: 5.6.0
-Stable tag: 1.6.0
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,9 @@ API-Key.
 Same as any other standard WordPress plugin.
 
 == Changelog ==
+
+= 1.7.0 =
+* Support for italian donation forms.
 
 = 1.6.0 =
 * Define default amounts on settings page.
