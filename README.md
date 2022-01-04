@@ -37,6 +37,9 @@ Same as any other standard WordPress plugin.
 
 ## Changelog ##
 
+### 1.7.0 ###
+* Support for italian donation forms.
+
 ### 1.6.0 ###
 * Define default amounts on settings page.
 * Display shortcode on settings page.
