@@ -18,8 +18,6 @@ class Raisenow_Community_Frontend {
 	 * @return string
 	 */
 	public function donation_form( $atts ) {
-		$languages = [ 'de', 'fr', 'en' ];
-
 		$options = shortcode_atts(
 			Raisenow_Community_Util::get_shortcode_atts(),
 			$atts
@@ -65,12 +63,12 @@ class Raisenow_Community_Frontend {
 		}
 
 		$language = strtolower( trim( $options['widget_language'] ) );
-		if ( ! in_array( $language, $languages ) ) {
+		if ( ! in_array( $language, Raisenow_Community_Util::WIDGET_LANGUAGES ) ) {
 			$id = get_the_ID();
 			if ( current_user_can( 'edit_posts', $id ) || current_user_can( 'edit_pages', $id ) ) {
 				return '<div>' . sprintf( __( 'Donation form: Unknown language key in shortcode. Accepted values are %1$s. Shortcode must have the form: %2$s',
 						'%1$s will be replaced with the accepted language keys. %2$s will be replaced with an example shortcode.',
-						RAISENOW_COMMUNITY_PREFIX ), implode( ', ', $languages ),
+						RAISENOW_COMMUNITY_PREFIX ), implode( ', ', Raisenow_Community_Util::WIDGET_LANGUAGES ),
 						'[donation_form language="en" one_time_1="200" one_time_2="100" one_time_3="50" one_time_4="20" recurring_1="100" recurring_2="50" recurring_3="20" recurring_4="5"]' ) . '</div>';
 			} else {
 				return '<div>' . __( 'Donation form: Invalid language setting. Please contact site administrator.', RAISENOW_COMMUNITY_PREFIX ) . '</div>';

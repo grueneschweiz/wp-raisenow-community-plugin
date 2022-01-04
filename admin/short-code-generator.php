@@ -19,12 +19,15 @@
                         <option value="de" <?php if ( 'de' === $lang )
 							echo 'selected="selected"' ?>>
 							<?php _e( 'German', RAISENOW_COMMUNITY_PREFIX ); ?></option>
+                        <option value="en" <?php if ( 'en' === $lang )
+		                    echo 'selected="selected"' ?>>
+		                    <?php _e( 'English', RAISENOW_COMMUNITY_PREFIX ); ?></option>
                         <option value="fr" <?php if ( 'fr' === $lang )
 							echo 'selected="selected"' ?>>
 							<?php _e( 'French', RAISENOW_COMMUNITY_PREFIX ); ?></option>
-                        <option value="en" <?php if ( 'en' === $lang )
+                        <option value="it" <?php if ( 'it' === $lang )
 							echo 'selected="selected"' ?>>
-							<?php _e( 'English', RAISENOW_COMMUNITY_PREFIX ); ?></option>
+							<?php _e( 'Italian', RAISENOW_COMMUNITY_PREFIX ); ?></option>
                     </select>
                 </div>
                 <div id="<?php echo RAISENOW_COMMUNITY_PREFIX ?>-select-donation_form-amounts"
