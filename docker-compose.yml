@@ -1,26 +1,36 @@
-# https://github.com/chriszarate/docker-compose-wordpress
-
-version: "2"
+version: "3.8"
 
 services:
   wordpress:
-    image: "chriszarate/wordpress"
+    image: grueneschweiz/raisenow-community:latest
+    build:
+      context: .
+      dockerfile: "./.docker/wordpress.Dockerfile"
     environment:
-      VIRTUAL_HOST: "${DOCKER_DEV_DOMAIN}"
-      WORDPRESS_ACTIVATE_PLUGINS: "raisenow-community" # plugin folder relative to /wp-content/plugins/
-      WORDPRESS_ACTIVATE_THEME: ""   # theme folder relative to /wp-content/themes/
-      WORDPRESS_SITE_TITLE: "RaiseNow Community Plugin"
-      WORDPRESS_SITE_URL: "http://${DOCKER_DEV_DOMAIN}"
-      XDEBUG_CONFIG: "remote_host=${DOCKER_LOCAL_IP} idekey=xdebug"
+      WORDPRESS_DB_HOST: "mysql"
+      WORDPRESS_DB_NAME: "wordpress"
+      WORDPRESS_DB_PASSWORD: ""
+      WORDPRESS_DB_USER: "root"
+      WORDPRESS_DEBUG: 1
+      PHP_IDE_CONFIG: serverName=Docker
     depends_on:
       - "mysql"
     volumes:
       - ".:/var/www/html/wp-content/plugins/raisenow-community"
+      - "./.docker/addon-php.ini:/usr/local/etc/php/conf.d/addon-php.ini:ro"
     ports:
       - "8080:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
   mysql:
     image: "mariadb:10.2"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: "wordpress"
       MYSQL_ROOT_PASSWORD: ""
+    volumes:
+      - "db:/var/lib/mysql"
+
+volumes:
+  db:
