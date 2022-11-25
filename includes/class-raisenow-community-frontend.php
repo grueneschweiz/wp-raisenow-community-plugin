@@ -75,8 +75,8 @@ class Raisenow_Community_Frontend {
 			}
 		}
 
-		$one_time_amounts  = $this->get_amounts( 'one_time', $atts );
-		$recurring_amounts = $this->get_amounts( 'recurring', $atts );
+		$one_time_amounts  = $this->get_amounts( 'one_time', $options );
+		$recurring_amounts = $this->get_amounts( 'recurring', $options );
 
 		$custom_css    = $options['css'];
 		$custom_script = $options['javascript'];
