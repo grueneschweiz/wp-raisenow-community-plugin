@@ -39,6 +39,7 @@ Same as any other standard WordPress plugin.
 
 = 1.7.1 =
 * Fix PHP notice if shortcode misses amounts.
+* Shortcode generator not fully visible on small screens.
 
 = 1.7.0 =
 * Support for italian donation forms.
