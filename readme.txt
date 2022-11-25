@@ -37,6 +37,9 @@ Same as any other standard WordPress plugin.
 
 == Changelog ==
 
+= 1.7.1 =
+* Fix PHP notice if shortcode misses amounts.
+
 = 1.7.0 =
 * Support for italian donation forms.
 
