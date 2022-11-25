@@ -3,7 +3,7 @@ Contributors: cyrillbolliger, phil8900, vdrouotmecom
 Tags: donations, raisenow, fundraising
 Requires at least: 4.9
 Tested up to: 5.6.0
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
