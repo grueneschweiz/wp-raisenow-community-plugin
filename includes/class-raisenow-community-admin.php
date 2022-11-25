@@ -20,7 +20,7 @@ class Raisenow_Community_Admin {
 		add_thickbox();
 
 		// add media button
-		echo '<a href="#TB_inline?&inlineId=' . RAISENOW_COMMUNITY_PREFIX . '-short-code-generator&height=700" class="thickbox button" ' .
+		echo '<a href="#TB_inline?&inlineId=' . RAISENOW_COMMUNITY_PREFIX . '-short-code-generator&height=550&width=600" class="thickbox button" ' .
 		     'title="' . esc_attr__( 'Insert Donation Form', RAISENOW_COMMUNITY_PREFIX ) . '">' .
 		     '<span class="wp-media-buttons-icon dashicons dashicons-plus"></span> ' .
 		     __( 'Insert Donation Form', RAISENOW_COMMUNITY_PREFIX ) . '</a>';

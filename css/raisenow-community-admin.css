@@ -1,3 +1,10 @@
+.raisenow-community-wrapper {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: min(100%, calc(100vw - 65px));
+    height: min(100%, calc(100vh - 123px));
+}
+
 #raisenow-community-short-code-message {
     display: none;
 }
