@@ -271,7 +271,7 @@ EOJS;
 		$amounts = array();
 
 		for ( $i = 0; $i <= 10; $i ++ ) {
-			$key = "${type}_${i}";
+			$key = "{$type}_{$i}";
 			if ( array_key_exists( $key, $atts )
 			     && ! empty( $atts[ $key ] ) ) {
 				$amounts[] = $atts[ $key ];
